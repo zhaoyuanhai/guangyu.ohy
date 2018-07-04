@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "联系方式";
+}
+@using OHYModel;
+<h2>联系方式</h2>
+<form action="/CompanyProfile/Add" method="post" enctype="multipart/form-data">
+    <section>
+        <ul>
+            <li>
+                <label>语言：</label>
+                <select name="language">
+                    <option value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                    <option value="@LanguageEnum.English">@LanguageEnum.English</option>
+                </select>
+            </li>
+
+        </ul>
+    </section>
+    <script>
+
+        $("input[name='back']").click(function () {
+            window.location = "/CompanyProfile/index";
+        });
+        function Save() {
+            var title = $("input[name='title']").val();
+            var content = $("input[name='content']").val();
+            //var address = $("input[name='address']").val();
+            if (title == "") {
+                alert("输入标题为空，或都是空格");
+                return false;
+            }
+            if (content == "") {
+                alert("输入内容为空，或都是空格");
+                return false;
+            }
+            //if (address == "") {
+            //    alert("输入地址为空，或都是空格");
+            //    return false;
+            //}
+            $("form").submit();
+        }
+    </script>
+</form>

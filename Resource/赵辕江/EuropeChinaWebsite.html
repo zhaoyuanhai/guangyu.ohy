@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="EuropeChinaWebsite.css">
+    <script src="js/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            $(".typeimg").hover(function () {
+                var index = $(this).data("index");
+                $(this).attr("src", "image/classification/" + index + "." + index + ".png");
+            }, function () {
+                var index = $(this).data("index");
+                $(this).attr("src", "image/classification/" + index + ".png");
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div style="background-image:url('./image/sea.jpg')">
+            <div class="top">
+                <a href="#"><img src="image/classification/LOGO.png" alt=""></a>
+                <a href="#" class="language">英文</a>
+            </div>
+            <div class="nft">
+                <ul>
+                    <li class="type">
+                        <img src="image/cube.png" alt="">分类
+                        <div class="cont">
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <img class="typeimg" src="image/classification/1.png" data-index="1" alt="">
+                                        <span>公司简介</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img class="typeimg" src="image/classification/2.png" data-index="2" alt="">
+                                        <span>合作伙伴</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img class="typeimg" src="image/classification/3.png" data-index="3" alt="">
+                                        <span>产品中心</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img class="typeimg" src="image/classification/4.png" data-index="4" alt="">
+                                        <span>解决方案</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img class="typeimg" src="image/classification/5.png" data-index="5" alt="">
+                                        <span>业绩展示</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img class="typeimg" src="image/classification/6.png" data-index="6" alt="">
+                                        <span>新闻中心</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <img class="typeimg" src="image/classification/7.png" data-index="7" alt="">
+                                        <span>联系方式</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="news">
+                        最新
+                        <div>
+                            <ul>
+                                <li>最新</li>
+                                <li>最新</li>
+                                <li>最新</li>
+                                <li>最新</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="input-container">
+                <form action="form_validity.php">
+                    <div class="input-box">
+                        <h3 class="title">CONTACT FORM</h3>
+                        <div class="form-box">
+                            <input type="text" placeholder="尊称" name="name" /><br/>
+                            <input type="tel" placeholder="电话" name="tel" /><br/>
+                            <input type="email" placeholder="邮箱" name="email" /><br/>
+                            <textarea rows="6" placeholder="您的需求" name="demand"></textarea>
+                        </div>
+                        <div class="btn-box">
+                            <button type="reset" class="left">重 置</button>
+                            <button type="submit" class="right">提 交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div style="background-color: gray">
+            <div class="kh_tuwj">
+                <div class="LOGO-kh">
+                    <img src="image/LOGO-kh.png" alt="">
+                    <h3>北京欧华源新技术有限公司</h3>
+                    <div class="info">
+                        <p>
+                            是一家专为拥有3至10年工作经验的资深互联网从业者，提万用户<br /> 供工作机会的招聘网站。拉勾网专注于在为求职者提供更人性化、专
+                            <br /> 业化服务的同时，降低企业端寻觅良才的时间和成本。拉勾网致力于
+                            <br /> 是一家专注于为职场人提供职业成长机会,为中小型企业提供优质
+                            <br /> 的人力资源服务的公司.成长三年、四轮巨额融资、服务千万用户,拉
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="" style="background-color: blue"></div>
+    </div>
+</body>
+
+</html>

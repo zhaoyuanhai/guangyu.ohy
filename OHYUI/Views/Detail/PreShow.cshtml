@@ -1,0 +1,66 @@
+﻿@model List<PerformancePresentation>
+@{
+    ViewBag.Title = UIHelper.Word("业绩展示");
+}
+
+@functions {
+    PerformancePresentation getModel(int index)
+    {
+        if (index < Model.Count)
+            return Model[index];
+        return null;
+    }
+}
+
+@section header{
+    <link href="/Content/preshow.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.vticker-min.js"></script>
+    <script>
+        $(function () {
+            $('.list').vTicker({
+                speed: 700,
+                pause: 4000,
+                animation: 'fade',
+                mousePause: false,
+                showItems: 1,
+                height: 350
+            });
+        });
+    </script>
+}
+
+<div class="cn">
+    <div class="conver">
+        <img src="~/images/Performance.jpg" style="width:100%;height:100%" alt="@UIHelper.Word("业绩展示")" />
+    </div>
+    <div class="news">
+        <div>
+            <div>
+                <ul style="width: 596px">
+                    <li class="settled">
+                        <div>
+                            <span class="n1">@UIHelper.Word("项目名称")</span>
+                            <span class="n2">@UIHelper.Word("项目名称")</span>
+                            <span class="n3">@UIHelper.Word("项目名称")</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list" style="position: relative; height: 114px;">
+                <ul style="position: absolute; margin: 0pt; padding: 0pt; top: 0px;">
+                    @for (int i = 0; i < Model.Count; i += 3)
+                    {
+                        var item = Model[i];
+                        <li>
+                            <div>
+                                <span class="n1">@(getModel(i)?.EntryName ?? "--")</span>
+                                <span class="n2">@(getModel(i + 1)?.EntryName ?? "--")</span>
+                                <span class="n3">@(getModel(i + 2)?.EntryName ?? "--")</span>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

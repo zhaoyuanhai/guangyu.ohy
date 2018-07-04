@@ -1,0 +1,279 @@
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+select,
+textarea,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.contactMark {
+    width: 100%;
+    height: 100%;
+    background: url("../images/mark.png") repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 89;
+    display: none
+}
+
+.contact {
+    width: 253px;
+    height: 141px;
+    position: absolute;
+    top: 200px;
+    right: -80px;
+    z-index: 90;
+}
+
+.contactBox {
+    width: 253px;
+    height: 141px;
+    -webkit-transform-origin: 231px 22px;
+    transform-origin: 231px 22px;
+    -webkit-transform: rotateZ(-90deg);
+    transform: rotateZ(-90deg);
+    position: relative;
+    cursor: pointer;
+}
+
+.contact.move .contactBox {
+    animation: sway 1s;
+    animation-fill-mode: forwards;
+}
+
+.contactBox.model1 .info {
+    animation: m1 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.contactBox.model1 .qq {
+    animation: d0 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.contactBox.model2 .qq {
+    animation: m2 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.contactBox.model2 .code {
+    animation: d0 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.contactBox.model3 .info {
+    animation: m3_1 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.contactBox.model3 .qq {
+    animation: m3_2 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.contactBox.model3 .code {
+    animation: m3_3 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.move {
+    animation: move 1s;
+    animation-fill-mode: forwards;
+}
+
+.anima-hide {
+    animation: hide 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    to {
+        right: calc(50% - 100px);
+    }
+}
+
+@keyframes sway {
+    30% {
+        transform: rotateZ(-80deg);
+    }
+    50% {
+        transform: rotateZ(-50deg);
+    }
+    70% {
+        transform: rotateZ(-40deg);
+    }
+    85% {
+        transform: rotateZ(-20deg);
+    }
+    to {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes m1 {
+    to {
+        transform: rotateZ(135deg);
+    }
+}
+
+@keyframes m2 {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(100deg);
+    }
+}
+
+@keyframes m3_1 {
+    from {
+        transform: rotateZ(135deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes m3_2 {
+    from {
+        transform: rotateZ(100deg);
+    }
+    to {
+        transform: rotateZ(345deg);
+    }
+}
+
+@keyframes m3_3 {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(330deg);
+    }
+}
+
+@keyframes d0 {
+    to {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.contact i {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 100;
+    background: url("../images/index/littleCircle.png");
+    top: 10px;
+    right: 10px
+}
+
+.contact div {
+    width: 253px;
+    height: 156px;
+    position: absolute;
+    top: 0;
+    -webkit-transform-origin: 231px 22px;
+    transform-origin: 231px 22px;
+    font-size: 12px;
+    color: #fff
+}
+
+.contact .info {
+    background: url("../images/contact.png");
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ(0deg);
+    z-index: 3
+}
+
+.contact .info p {
+    text-indent: 18px;
+    opacity: .6
+}
+
+.contact .info li {
+    float: left;
+    width: 108px;
+    height: 20px;
+    line-height: 20px
+}
+
+.contact .qq {
+    background: url("../images/qq.png");
+    z-index: 2;
+    -webkit-transform: rotateZ(-15deg);
+    transform: rotateZ(-15deg)
+}
+
+.contact .qq span {
+    float: left;
+    line-height: 22px
+}
+
+.contact .qq p {
+    padding-left: 60px;
+    line-height: 22px
+}
+
+.contact .code {
+    background: url("../images/code.png");
+    z-index: 1;
+    -webkit-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg)
+}
+
+.contact .code dl {
+    padding: 6px 0 0 30px
+}
+
+.contact .code dt {
+    float: left
+}
+
+.contact .code dd {
+    padding-left: 90px;
+    height: 22px;
+    line-height: 22px
+}
+
+.contact .code dd.first {
+    padding-top: 16px
+}
+
+.contact h3 {
+    height: 40px;
+    line-height: 40px;
+    margin-left: 18px;
+    font-size: 16px;
+    font-weight: normal
+}
+
+.contact ul {
+    padding: 0 18px
+}

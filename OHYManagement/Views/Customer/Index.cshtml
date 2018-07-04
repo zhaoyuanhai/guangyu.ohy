@@ -1,0 +1,64 @@
+﻿@*@model OHYModel.Customer*@
+@using OHYModel;
+@model IEnumerable<OHYModel.Customer>
+@{
+    ViewBag.Title = "Index";
+    string[] languages = Enum.GetNames(typeof(LanguageEnum));
+}
+<style type="text/css">
+    th {
+    text-align:center;
+    }
+</style>
+<h2 style="text-align:left">首页用户列表</h2>
+<div style="margin-top:30px;">
+    <div>
+        语言：
+        <select id="language" name="Language">
+            @foreach (string language in languages)
+            {
+                <option @(Language.ToString() == language ? "selected" : "") value="@((int)Enum.Parse(typeof(LanguageEnum),language))">@language</option>
+            }
+        </select>
+    </div>
+
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>尊称</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th>需求</th>
+                <th>注册时间</th>
+                <th>操作</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p._id</td>
+                    <td>@p.NickName</td>
+                    <td>@p.TelePhone</td>
+                    <td>@p.Email</td>
+                    <td>@p.requirement</td>
+                    <td>2017-01-01</td>
+                    <td>
+                        <a>编辑</a>
+                        <a>删除</a>
+                    </td>
+                </tr>
+            }
+           
+        </tbody>
+    </table>
+</div>
+@Html.Partial("PageView");
+<script type="text/javascript">
+    $("#language").change(function () {
+        var lan = $("#language").val();
+        window.location = "/Customer/index?language=" + lan;
+    });
+</script>

@@ -1,0 +1,65 @@
+﻿@model CompanyProfile
+@{
+    ViewBag.Title = UIHelper.Word("联系方式");
+}
+
+@section header{
+    <link href="/Content/preshow.css" rel="stylesheet" />
+    <link href="/Content/contactInfomation.css" rel="stylesheet" />
+    <style>
+        .news > div {
+            overflow-y: auto;
+        }
+    </style>
+}
+
+<div class="cn">
+    <div class="conver">
+        <img src="~/images/联系我们banner.jpg" style="width:100%;height:100%" />
+    </div>
+    <div class="news">
+        <div class="list">
+            <h1>@UIHelper.Word("北京欧华源新技术有限公司")</h1>
+            <address>
+                @foreach (var item in Model.Note)
+                {
+                    <p>@item</p>
+                }
+            </address>
+            <h2 class="fdslik">@UIHelper.Word("友情链接")</h2>
+            <section class="imglist">
+                <a href="http://aladyr.net" target="_blank">
+                    <img src="~/images/friendlink/logo-1.png" alt="" />
+                </a>
+                <a href="http://www.membranes.com.cn" target="_blank">
+                    <img src="~/images/friendlink/logo-2.png" alt="" />
+                </a>
+                <a href="http://www.idadesal.org" target="_blank">
+                    <img src="~/images/friendlink/logo-3.png" alt="" />
+                </a>
+                <a href="http://www.bownt.com" target="_blank">
+                    <img src="~/images/friendlink/logo-4.png" alt="" />
+                </a>
+                <a href="http://www.conseptec.net">
+                    <img src="~/images/friendlink/conseptec.png" />
+                </a>
+                <a href="http://fedco-usa.com" target="_blank">
+                    <img src="~/images/friendlink/logo-5.png" alt="" />
+                </a>
+                <a href="http://www.ffc-uk.com" target="_blank">
+                    <img src="~/images/friendlink/logo-6.png" alt="" />
+                </a>
+                <a href="https://www.idom.com">
+                    <img src="~/images/friendlink/idom.png" />
+                </a>
+                <a href="http://www.valvospain.com" target="_blank">
+                    <img src="~/images/friendlink/logo-9.png" alt="" />
+                </a>
+
+                <a href="www.victaulic.com" target="_blank">
+                    <img src="~/images/friendlink/logo-10.png" alt="" />
+                </a>
+            </section>
+        </div>
+    </div>
+</div>

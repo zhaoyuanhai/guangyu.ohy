@@ -1,0 +1,37 @@
+﻿@using OHYDAL;
+@using OHYModel;
+
+@helper LanguageHelper(Dictionary<int, string> languageList)
+{
+    <ul class="lang">
+        @foreach (var item in languageList)
+        {
+            <li data-value="@item.Key">@item.Value</li>
+        }
+    </ul>
+}
+
+@functions {
+
+    static List<WordDic> words = null;
+    public static string Word(string str)
+    {
+        if (words == null)
+        {
+            OhyMongoClient client = new OhyMongoClient();
+            words = client.FindAll<WordDic>();
+        }
+
+        var word = words.FirstOrDefault(w => w.Word == str);
+        if (word == null)
+            return str;
+
+        var cookieLanguage = (LanguageEnum)Enum.Parse(typeof(LanguageEnum), HttpContext.Current.Request.Cookies["language"].Value);
+
+        var lan = word.Lan.FirstOrDefault(e => e.Language == cookieLanguage);
+        if (lan == null)
+            return str;
+
+        return lan.Value;
+    }
+}

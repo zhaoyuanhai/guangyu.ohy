@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B74CCCC8-C5B5-47BC-A537-6E08C455CEB1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OHYManagement</RootNamespace>
+    <AssemblyName>OHYManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="App_Code.sy0qjpap">
+      <HintPath>..\packages\App_Code.sy0qjpap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.4.2.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.2\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.2.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.2\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.2.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.2\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CompanyIntroController.cs" />
+    <Compile Include="Controllers\CompanyProfileController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\FriendlyLinkController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeTextController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\IndexImageAddController.cs" />
+    <Compile Include="Controllers\IndexImageListController.cs" />
+    <Compile Include="Controllers\IndexImageUpdateController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PartnerAddController.cs" />
+    <Compile Include="Controllers\PartnerListController.cs" />
+    <Compile Include="Controllers\PartnerUpdateController.cs" />
+    <Compile Include="Controllers\PerformancePresentationController.cs" />
+    <Compile Include="Controllers\PressCenterController.cs" />
+    <Compile Include="Controllers\ProductAddController.cs" />
+    <Compile Include="Controllers\ProductListController.cs" />
+    <Compile Include="Controllers\ProductUpdateController.cs" />
+    <Compile Include="Controllers\SolutionAddController.cs" />
+    <Compile Include="Controllers\SolutionListController.cs" />
+    <Compile Include="Controllers\SolutionUpdateController.cs" />
+    <Compile Include="Filter\LonginFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MyWebViewPage.cs" />
+    <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\animate.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css-v=3.3.5.css" />
+    <Content Include="Content\css\demo\webuploader-demo.min.css" />
+    <Content Include="Content\css\font-awesome.min.css-v=4.4.0.css" />
+    <Content Include="Content\css\login.min.css" />
+    <Content Include="Content\css\ohyStyle.css" />
+    <Content Include="Content\css\patterns\header-profile-skin-1.png" />
+    <Content Include="Content\css\patterns\header-profile-skin-3.png" />
+    <Content Include="Content\css\patterns\header-profile.png" />
+    <Content Include="Content\css\patterns\shattered.png" />
+    <Content Include="Content\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Content\css\plugins\blueimp\css\blueimp-gallery.min.css" />
+    <Content Include="Content\css\plugins\blueimp\img\error.png" />
+    <Content Include="Content\css\plugins\blueimp\img\error.svg" />
+    <Content Include="Content\css\plugins\blueimp\img\loading.gif" />
+    <Content Include="Content\css\plugins\blueimp\img\play-pause.png" />
+    <Content Include="Content\css\plugins\blueimp\img\play-pause.svg" />
+    <Content Include="Content\css\plugins\blueimp\img\video-play.png" />
+    <Content Include="Content\css\plugins\blueimp\img\video-play.svg" />
+    <Content Include="Content\css\plugins\bootstrap-table\bootstrap-table.min.css" />
+    <Content Include="Content\css\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="Content\css\plugins\chosen\chosen-sprite.png" />
+    <Content Include="Content\css\plugins\chosen\chosen.css" />
+    <Content Include="Content\css\plugins\clockpicker\clockpicker.css" />
+    <Content Include="Content\css\plugins\codemirror\ambiance.css" />
+    <Content Include="Content\css\plugins\codemirror\codemirror.css" />
+    <Content Include="Content\css\plugins\colorpicker\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\css\plugins\colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Content\css\plugins\colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Content\css\plugins\colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Content\css\plugins\colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Content\css\plugins\colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Content\css\plugins\cropper\cropper.min.css" />
+    <Content Include="Content\css\plugins\datapicker\datepicker3.css" />
+    <Content Include="Content\css\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\css\plugins\dropzone\basic.css" />
+    <Content Include="Content\css\plugins\dropzone\dropzone.css" />
+    <Content Include="Content\css\plugins\footable\fonts\footable.svg" />
+    <Content Include="Content\css\plugins\footable\footable.core.css" />
+    <Content Include="Content\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\css\plugins\iCheck\custom.css" />
+    <Content Include="Content\css\plugins\iCheck\green%402x.png" />
+    <Content Include="Content\css\plugins\iCheck\green.png" />
+    <Content Include="Content\css\plugins\images\sort_asc.png" />
+    <Content Include="Content\css\plugins\images\sort_desc.png" />
+    <Content Include="Content\css\plugins\images\sprite-skin-flat.png" />
+    <Content Include="Content\css\plugins\images\spritemap%402x.png" />
+    <Content Include="Content\css\plugins\images\spritemap.png" />
+    <Content Include="Content\css\plugins\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="Content\css\plugins\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Content\css\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="Content\css\plugins\jqgrid\ui.jqgrid.css-0820.css" />
+    <Content Include="Content\css\plugins\jsTree\32px.png" />
+    <Content Include="Content\css\plugins\jsTree\style.min.css" />
+    <Content Include="Content\css\plugins\jsTree\throbber.gif" />
+    <Content Include="Content\css\plugins\markdown\bootstrap-markdown.min.css" />
+    <Content Include="Content\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Content\css\plugins\nouslider\jquery.nouislider.css" />
+    <Content Include="Content\css\plugins\plyr\plyr.css" />
+    <Content Include="Content\css\plugins\plyr\sprite.svg" />
+    <Content Include="Content\css\plugins\simditor\simditor.css" />
+    <Content Include="Content\css\plugins\steps\jquery.steps.css" />
+    <Content Include="Content\css\plugins\summernote\summernote-bs3.css" />
+    <Content Include="Content\css\plugins\summernote\summernote.css" />
+    <Content Include="Content\css\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Content\css\plugins\switchery\switchery.css" />
+    <Content Include="Content\css\plugins\toastr\toastr.min.css" />
+    <Content Include="Content\css\plugins\treeview\bootstrap-treeview.css" />
+    <Content Include="Content\css\plugins\webuploader\webuploader.css" />
+    <Content Include="Content\css\style.min.css" />
+    <Content Include="Content\css\style.min.css-v=4.0.0.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\a1.jpg" />
+    <Content Include="Content\img\a2.jpg" />
+    <Content Include="Content\img\a3.jpg" />
+    <Content Include="Content\img\a4.jpg" />
+    <Content Include="Content\img\a5.jpg" />
+    <Content Include="Content\img\a6.jpg" />
+    <Content Include="Content\img\a7.jpg" />
+    <Content Include="Content\img\a8.jpg" />
+    <Content Include="Content\img\a9.jpg" />
+    <Content Include="Content\img\back1.jpg" />
+    <Content Include="Content\img\bg.png" />
+    <Content Include="Content\img\css\animate.min.css" />
+    <Content Include="Content\img\css\bootstrap.min.css" />
+    <Content Include="Content\img\css\bootstrap.min.css-v=3.3.5.css" />
+    <Content Include="Content\img\css\demo\webuploader-demo.min.css" />
+    <Content Include="Content\img\css\font-awesome.min.css-v=4.4.0.css" />
+    <Content Include="Content\img\css\login.min.css" />
+    <Content Include="Content\img\css\patterns\header-profile-skin-1.png" />
+    <Content Include="Content\img\css\patterns\header-profile-skin-3.png" />
+    <Content Include="Content\img\css\patterns\header-profile.png" />
+    <Content Include="Content\img\css\patterns\shattered.png" />
+    <Content Include="Content\img\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Content\img\css\plugins\blueimp\css\blueimp-gallery.min.css" />
+    <Content Include="Content\img\css\plugins\blueimp\img\error.png" />
+    <Content Include="Content\img\css\plugins\blueimp\img\error.svg" />
+    <Content Include="Content\img\css\plugins\blueimp\img\loading.gif" />
+    <Content Include="Content\img\css\plugins\blueimp\img\play-pause.png" />
+    <Content Include="Content\img\css\plugins\blueimp\img\play-pause.svg" />
+    <Content Include="Content\img\css\plugins\blueimp\img\video-play.png" />
+    <Content Include="Content\img\css\plugins\blueimp\img\video-play.svg" />
+    <Content Include="Content\img\css\plugins\bootstrap-table\bootstrap-table.min.css" />
+    <Content Include="Content\img\css\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="Content\img\css\plugins\chosen\chosen-sprite.png" />
+    <Content Include="Content\img\css\plugins\chosen\chosen.css" />
+    <Content Include="Content\img\css\plugins\clockpicker\clockpicker.css" />
+    <Content Include="Content\img\css\plugins\codemirror\ambiance.css" />
+    <Content Include="Content\img\css\plugins\codemirror\codemirror.css" />
+    <Content Include="Content\img\css\plugins\colorpicker\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\img\css\plugins\colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Content\img\css\plugins\colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Content\img\css\plugins\colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Content\img\css\plugins\colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Content\img\css\plugins\colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Content\img\css\plugins\cropper\cropper.min.css" />
+    <Content Include="Content\img\css\plugins\datapicker\datepicker3.css" />
+    <Content Include="Content\img\css\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\img\css\plugins\dropzone\basic.css" />
+    <Content Include="Content\img\css\plugins\dropzone\dropzone.css" />
+    <Content Include="Content\img\css\plugins\footable\fonts\footable.svg" />
+    <Content Include="Content\img\css\plugins\footable\footable.core.css" />
+    <Content Include="Content\img\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\img\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\img\css\plugins\iCheck\custom.css" />
+    <Content Include="Content\img\css\plugins\iCheck\green%402x.png" />
+    <Content Include="Content\img\css\plugins\iCheck\green.png" />
+    <Content Include="Content\img\css\plugins\images\sort_asc.png" />
+    <Content Include="Content\img\css\plugins\images\sort_desc.png" />
+    <Content Include="Content\img\css\plugins\images\sprite-skin-flat.png" />
+    <Content Include="Content\img\css\plugins\images\spritemap%402x.png" />
+    <Content Include="Content\img\css\plugins\images\spritemap.png" />
+    <Content Include="Content\img\css\plugins\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="Content\img\css\plugins\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Content\img\css\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="Content\img\css\plugins\jqgrid\ui.jqgrid.css-0820.css" />
+    <Content Include="Content\img\css\plugins\jsTree\32px.png" />
+    <Content Include="Content\img\css\plugins\jsTree\style.min.css" />
+    <Content Include="Content\img\css\plugins\jsTree\throbber.gif" />
+    <Content Include="Content\img\css\plugins\markdown\bootstrap-markdown.min.css" />
+    <Content Include="Content\img\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Content\img\css\plugins\nouslider\jquery.nouislider.css" />
+    <Content Include="Content\img\css\plugins\plyr\plyr.css" />
+    <Content Include="Content\img\css\plugins\plyr\sprite.svg" />
+    <Content Include="Content\img\css\plugins\simditor\simditor.css" />
+    <Content Include="Content\img\css\plugins\steps\jquery.steps.css" />
+    <Content Include="Content\img\css\plugins\summernote\summernote-bs3.css" />
+    <Content Include="Content\img\css\plugins\summernote\summernote.css" />
+    <Content Include="Content\img\css\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Content\img\css\plugins\switchery\switchery.css" />
+    <Content Include="Content\img\css\plugins\toastr\toastr.min.css" />
+    <Content Include="Content\img\css\plugins\treeview\bootstrap-treeview.css" />
+    <Content Include="Content\img\css\plugins\webuploader\webuploader.css" />
+    <Content Include="Content\img\css\style.min.css" />
+    <Content Include="Content\img\css\style.min.css-v=4.0.0.css" />
+    <Content Include="Content\img\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\iconfont-logo.png" />
+    <Content Include="Content\img\icons.png" />
+    <Content Include="Content\img\index.jpg" />
+    <Content Include="Content\img\index_4.jpg" />
+    <Content Include="Content\img\loading-upload.gif" />
+    <Content Include="Content\img\locked.png" />
+    <Content Include="Content\img\login-background.jpg" />
+    <Content Include="Content\img\p1.jpg" />
+    <Content Include="Content\img\p2.jpg" />
+    <Content Include="Content\img\p3.jpg" />
+    <Content Include="Content\img\profile.jpg" />
+    <Content Include="Content\img\profile_big.jpg" />
+    <Content Include="Content\img\profile_small.jpg" />
+    <Content Include="Content\img\progress.png" />
+    <Content Include="Content\img\p_big1.jpg" />
+    <Content Include="Content\img\p_big2.jpg" />
+    <Content Include="Content\img\p_big3.jpg" />
+    <Content Include="Content\img\qr_code.png" />
+    <Content Include="Content\img\success.png" />
+    <Content Include="Content\img\timg.jpg" />
+    <Content Include="Content\img\user.png" />
+    <Content Include="Content\img\wenku_logo.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\fonts\fontawesome-webfont.eot-" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot-v=4.4.0" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg-v=4.4.0" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf-v=4.4.0" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff-v=4.4.0" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2-v=4.4.0" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot-" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\css\plugins\footable\fonts\footable.eot" />
+    <Content Include="Content\css\plugins\footable\fonts\footable.eot-" />
+    <Content Include="Content\css\plugins\footable\fonts\footable.ttf" />
+    <Content Include="Content\css\plugins\footable\fonts\footable.woff" />
+    <Content Include="Content\img\css\plugins\footable\fonts\footable.eot" />
+    <Content Include="Content\img\css\plugins\footable\fonts\footable.eot-" />
+    <Content Include="Content\img\css\plugins\footable\fonts\footable.ttf" />
+    <Content Include="Content\img\css\plugins\footable\fonts\footable.woff" />
+    <Content Include="Content\img\fonts\fontawesome-webfont.eot-" />
+    <Content Include="Content\img\fonts\fontawesome-webfont.eot-v=4.4.0" />
+    <Content Include="Content\img\fonts\fontawesome-webfont.svg-v=4.4.0" />
+    <Content Include="Content\img\fonts\fontawesome-webfont.ttf-v=4.4.0" />
+    <Content Include="Content\img\fonts\fontawesome-webfont.woff-v=4.4.0" />
+    <Content Include="Content\img\fonts\fontawesome-webfont.woff2-v=4.4.0" />
+    <Content Include="Content\img\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\img\fonts\glyphicons-halflings-regular.eot-" />
+    <Content Include="Content\img\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\img\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\img\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="controller.ashx" />
+    <Content Include="config.json" />
+    <None Include="Properties\PublishProfiles\ohyweb.config.pubxml" />
+    <None Include="Properties\PublishProfiles\Web.config.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\OHYjs\LanguageChange.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\anchor\anchor.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\attachment.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\attachment.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\attachment.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\alignicon.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\file-icons.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\icons.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\icons.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\image.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\progress.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\success.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\attachment\images\success.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\background\background.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\background\background.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\background\background.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\background\images\bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\background\images\success.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\chart.config.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\charts.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\charts.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\charts.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\images\charts0.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\images\charts1.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\images\charts2.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\images\charts3.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\images\charts4.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\charts\images\charts5.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\emotion.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\emotion.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\emotion.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\0.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\bface.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\cface.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\fface.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\tface.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\wface.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\emotion\images\yface.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\gmap\gmap.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\help\help.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\help\help.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\help\help.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\image.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\image.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\image.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\alignicon.jpg" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\icons.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\icons.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\image.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\progress.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\success.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\image\images\success.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\insertframe\insertframe.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\internal.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\link\link.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\map\map.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\map\show.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\music\music.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\music\music.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\music\music.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\preview\preview.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\addimg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\brush.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\delimg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\empty.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\eraser.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\redo.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\redoH.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\scale.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\size.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\undo.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\images\undoH.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\scrawl.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\scrawl.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\scrawl\scrawl.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\spechars\spechars.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\spechars\spechars.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\table\dragicon.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\table\edittable.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\table\edittable.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\table\edittable.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\table\edittd.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\table\edittip.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\config.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\images\bg.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\images\pre0.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\images\pre1.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\images\pre2.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\images\pre3.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\images\pre4.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\template.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\template.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\template\template.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\center_focus.jpg" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\file-icons.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\file-icons.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\icons.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\icons.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\image.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\left_focus.jpg" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\none_focus.jpg" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\progress.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\right_focus.jpg" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\success.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\images\success.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\video.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\video.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\video\video.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\webapp\webapp.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\wordimage\tangram.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\wordimage\wordimage.html" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\dialogs\wordimage\wordimage.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\en.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\addimage.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\background.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\button.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\copy.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\deletedisable.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\deleteenable.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\listbackground.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\localimage.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\music.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\rotateleftdisable.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\rotateleftenable.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\rotaterightdisable.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\rotaterightenable.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\en\images\upload.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\zh-cn\images\copy.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\zh-cn\images\localimage.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\zh-cn\images\music.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\zh-cn\images\upload.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\lang\zh-cn\zh-cn.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\css\ueditor.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\css\ueditor.min.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\dialogbase.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\anchor.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\arrow.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\arrow_down.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\arrow_up.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\button-bg.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\cancelbutton.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\charts.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\cursor_h.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\cursor_h.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\cursor_v.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\cursor_v.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\dialog-title-bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\filescan.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\highlighted.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\icons-all.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\icons.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\icons.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\loaderror.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\loading.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\lock.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\pagebreak.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\scale.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\sortable.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\spacer.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\sparator_v.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\table-cell-align.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\toolbar_bg.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\unhighlighted.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\upload.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\videologo.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\word.gif" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\default\images\wordpaste.png" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\themes\iframe.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\codemirror\codemirror.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\codemirror\codemirror.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\highcharts-more.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\highcharts.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\highcharts.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\annotations.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\data.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\data.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\exporting.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\funnel.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\map.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\map.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\themes\gray.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\themes\grid.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\highcharts\themes\skies.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\jquery-1.10.2.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\font\vjs.svg" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\video-js.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\video-js.min.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\video-js.swf" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\video.dev.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\video.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\Uploader.swf" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.css" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\ueditor.all.min.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\ueditor.all.min1.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\ueditor.config.js" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\ueditor.parse.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="upload\38394860300487996.jpg" />
+    <Content Include="upload\image\239976-106.jpg" />
+    <Content Include="upload\image\303405-106.jpg" />
+    <Content Include="upload\image\38394860300487996.jpg" />
+    <Content Include="upload\image\50216-106.jpg" />
+    <Content Include="upload\image\51339-106.jpg" />
+    <Content Include="upload\image\53609-106.jpg" />
+    <Content Include="upload\image\66716-106.jpg" />
+    <Content Include="upload\image\71575-106.jpg" />
+    <Content Include="upload\image\84418-106.jpg" />
+    <Content Include="upload\image\87143-106.jpg" />
+    <Content Include="upload\image\QQ图片20170228203403.jpg" />
+    <Content Include="upload\QQ图片20170228203403.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\PDFUpLoad\Upload.cshtml" />
+    <Content Include="Views\PDFUpLoad\Show.cshtml" />
+    <Content Include="upload\1166-1少儿平安福.pdf" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\HomeText\Index.cshtml" />
+    <Content Include="Views\HomeText\Edit.cshtml" />
+    <Content Include="Views\HomeText\Delete.cshtml" />
+    <Content Include="Views\CompanyProfile\Index.cshtml" />
+    <Content Include="Views\CompanyIntro\Index.cshtml" />
+    <Content Include="Views\PartnerList\Index.cshtml" />
+    <Content Include="Views\PartnerAdd\Index.cshtml" />
+    <Content Include="Views\PartnerUpdate\Index.cshtml" />
+    <Content Include="Views\ProductUpdate\Index.cshtml" />
+    <Content Include="Views\ProductAdd\Index.cshtml" />
+    <Content Include="Views\ProductList\Index.cshtml" />
+    <Content Include="Views\SolutionAdd\Index.cshtml" />
+    <Content Include="Views\SolutionList\Index.cshtml" />
+    <Content Include="Views\SolutionUpdate\Index.cshtml" />
+    <Content Include="Views\PerformancePresentation\Delete.cshtml" />
+    <Content Include="Views\PerformancePresentation\Edit.cshtml" />
+    <Content Include="Views\PerformancePresentation\Index.cshtml" />
+    <Content Include="Views\PressCenter\Delete.cshtml" />
+    <Content Include="Views\PressCenter\Edit.cshtml" />
+    <Content Include="Views\PressCenter\Index.cshtml" />
+    <Content Include="Views\IndexImageAdd\Index.cshtml" />
+    <Content Include="Views\IndexImageList\Index.cshtml" />
+    <Content Include="Views\IndexImageUpdate\Index.cshtml" />
+    <Content Include="Views\FriendlyLink\Index.cshtml" />
+    <Content Include="Views\FriendlyLink\FriendlyLinkList.cshtml" />
+    <Content Include="Views\FriendlyLink\FriendlyLinkUpdate.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\PressCenter\Add.cshtml" />
+    <Content Include="Views\PerformancePresentation\Add.cshtml" />
+    <Content Include="Views\HomeText\Add.cshtml" />
+    <Content Include="Views\CompanyProfile\Add.cshtml" />
+    <Content Include="Views\Shared\_ueditor.cshtml" />
+    <Content Include="Views\Shared\PageView.cshtml" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\font\vjs.eot" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\font\vjs.ttf" />
+    <Content Include="Scripts\OHYjs\ueditor1.4.3\third-party\video-js\font\vjs.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="upload\friendly\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Partner\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OHYCommon\OHYCommon.csproj">
+      <Project>{53f2db21-4564-4ab5-a6f3-79fcb4bbcda5}</Project>
+      <Name>OHYCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OHYDAL\OHYDAL.csproj">
+      <Project>{64969ea4-7f3f-4fa0-a4b9-e23b86aaba99}</Project>
+      <Name>OHYDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OHYModel\OHYModel.csproj">
+      <Project>{befa604a-f3dc-44aa-a576-9c7ba356b934}</Project>
+      <Name>OHYModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "友情链接";
+}
+@using OHYModel;
+<h2>友情链接</h2>
+<form action="/FriendlyLink/Index" method="post" enctype="multipart/form-data">
+    <section>
+        <ul>
+            <li>
+                <label>语言：</label>
+                <select name="language">
+                    <option value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                    <option value="@LanguageEnum.English">@LanguageEnum.English</option>
+                </select>
+            </li>
+            <li>
+                Logo：<input type="file" name="file" />
+            </li>
+            <li>
+                网址：<input type="text" name="wangzhi" />
+            </li>
+            <li>
+                <input type="button" name="save" value="保存" class="but80" />
+                <input type="button" value="返回" name="back" class="but80" />
+            </li>
+
+        </ul>
+    </section>
+    <script>
+        $("input[name='back']").click(function () {
+            window.location = "/FriendlyLink/FriendlyLinkList";
+        });
+        function Save() {
+            if ($("input[name='file']").val() == "") {
+                alert("请选择文件");
+                return false;
+            }
+            $("form").submit();
+        }
+    </script>
+</form>
+

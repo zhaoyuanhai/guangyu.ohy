@@ -1,0 +1,53 @@
+﻿@model CompanyProfile
+@{
+    ViewBag.Title = UIHelper.Word("公司简介");
+}
+
+@section header{
+    <style>
+        #background_content {
+            width: 82%;
+            height: 450px;
+            padding: 10px;
+            background: #fff;
+            position: relative;
+            border-radius: 10px;
+            margin: 0 auto;
+            top: 60px;
+            filter: alpha(opacity=95);
+            -moz-opacity: 0.95;
+            -khtml-opacity: 0.95;
+            opacity: 0.95;
+        }
+
+            #background_content img {
+                height: 200px;
+                width: 100%;
+                margin-bottom: 55px;
+            }
+
+        #content_validity {
+            width: 600px;
+            height: 100px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+            #content_validity p {
+                line-height: 33px;
+                font-size: 14px;
+                margin-top: 26px;
+                color: #1f1f1f;
+            }
+    </style>
+}
+
+
+
+<img src="/images/banner.jpg" alt="">
+<div id="content_validity">
+    <p>
+        @Model.Content
+    </p>
+</div>
+

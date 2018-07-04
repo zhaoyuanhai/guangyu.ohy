@@ -1,0 +1,8 @@
+.us {
+    position: absolute;
+    top: 300px;
+    right: -140px;
+    width: 228px;
+    height: 301px;
+    background: url("../images/index/us.png");
+}

@@ -1,0 +1,393 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+
+img {
+    border: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea, input {
+    font: 13.3333px Arial !important;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+    .container > div {
+        width: 33.33%;
+        height: 100%;
+        float: left;
+        position: relative;
+    }
+
+.kh_tuwj {
+    width: 60%;
+    height: 342px;
+    margin: 0 auto;
+    margin-top: 130px;
+}
+
+.LOGO-kh > img {
+    width: 100px;
+    margin-top: 50px;
+}
+
+.LOGO-kh .title {
+    color: #e6cb64;
+    margin: 15px 0;
+}
+
+.top {
+    background: #303030;
+    height: 50px;
+    width: 100%;
+}
+
+    .top > a.language {
+        position: absolute;
+        right: 15px;
+        top: 12px;
+        color: #fff;
+        width: 60px;
+        display: block;
+        text-align: center;
+    }
+
+    .top > a > img {
+        width: 85px;
+        margin: 8px 0 0 22px;
+    }
+
+
+.nft {
+    height: 50px;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}
+
+    .nft .cont {
+        position: absolute;
+        left: 0;
+        top: 50px;
+        box-sizing: border-box;
+        padding: 25px 30px 0px;
+        background-color: #303030;
+        display: none;
+        z-index: 2;
+    }
+
+        .nft .cont span {
+            color: white;
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+
+        .nft .cont::after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+
+    .nft li.type:hover {
+        background-color: #d2d2d2;
+    }
+
+        .nft li.type:hover .cont {
+            display: block;
+        }
+
+    .nft li.type .cont:hover {
+        display: block;
+    }
+
+    .nft .cont > ul > li {
+        float: left;
+        padding: 0 0 30px;
+        width: 33%;
+        height: 100px;
+        position: relative;
+    }
+
+        .nft .cont > ul > li > a {
+            display: table-cell;
+            width: 100%;
+            text-align: center;
+        }
+
+    .nft .cont img {
+        width: 60%;
+        display: block;
+        margin: auto;
+    }
+
+    .nft > ul > li {
+        float: left;
+        /*width: 100px;*/
+        padding:0 20px;
+        margin-left: 30px;
+        height: 50px;
+        display: inline-block;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        .nft > ul > li:nth-child(1) > img {
+            width: 14px;
+        }
+
+    .nft .news {
+        /*position: relative;*/
+    }
+
+        .nft .news:hover > div {
+            display: block;
+            width: 70%;
+            margin-left: -159px;
+            left: 50%;
+        }
+
+        .nft .news:hover {
+            background-color: #d2d2d2;
+        }
+
+        .nft .news > div {
+            position: absolute;
+            display: none;
+        }
+
+            .nft .news > div > ul {
+                width: 100%;
+                background-color: #d2d2d2;
+            }
+
+                .nft .news > div > ul > li {
+                    line-height: 40px;
+                    height: 40px;
+                }
+
+                    .nft .news > div > ul > li a {
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: inline-block;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+                    }
+
+                    .nft .news > div > ul > li:hover {
+                        background-color: #c0c0c0;
+                    }
+
+.uosf {
+    position: absolute;
+    top: 57px;
+    left: 57px;
+    width: 16px;
+    height: 16px;
+}
+
+    .uosf > li {
+        width: 6px;
+        height: 6px;
+        float: left;
+        border: 1px solid #eee;
+        background: blue;
+    }
+
+.input-container {
+    /*height: calc(100% - 90px);*/
+}
+
+.input-box {
+    margin: 80px auto;
+    width: 70%;
+}
+
+    .input-box h3.title {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+.form-box input, .form-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    height: 35px;
+    padding-left: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #daffbd;
+}
+
+    .form-box input.error .form-box textarea.error {
+        border: 1px solid red !important;
+    }
+
+.form-box p {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+    .form-box p label {
+        position: absolute;
+        display: block;
+        right: 15px;
+        top: 8px;
+        font-size: 14px;
+        color: red;
+    }
+
+.form-box textarea {
+    height: 100px;
+    padding-top: 10px;
+}
+
+.btn-box button {
+    width: 100px;
+    height: 30px;
+    background-color: #5299ff;
+    border: 0;
+    color: white;
+}
+
+    .btn-box button.left {
+        float: left;
+    }
+
+    .btn-box button.right {
+        float: right;
+    }
+
+div.info {
+    line-height: 25px;
+}
+
+    div.info p {
+        color: white;
+        line-height: 33px;
+        text-align: justify;
+    }
+
+.slideBox img {
+    width: 100%;
+    height: 100%;
+}
+
+.infomation {
+    position: relative;
+    padding: 40px 20px;
+}
+
+.info {
+    position: relative;
+}
+
+    .info > div {
+        position: absolute;
+        word-wrap: break-word;
+        width: 100%;
+        display: none;
+    }
+
+        .info > div.active {
+            display: block;
+        }
+
+
+.lang {
+    position: absolute;
+    z-index: 4;
+    right: 15px;
+    background-color: #808080;
+    top: 40px;
+    width: 70px;
+    min-height: 50px;
+    display: none;
+}
+
+    .lang.active {
+        display: block;
+        animation: movedown 0.5s;
+    }
+
+    .lang > li {
+        text-align: center;
+        height: 25px;
+        cursor: pointer;
+    }
+
+        .lang > li:hover {
+            background-color: #eeeeee;
+        }
+
+
+@-moz-keyframes movedown {
+    from {
+        top: 30px;
+    }
+
+    to {
+        top: 40px;
+    }
+}
+
+@-webkit-keyframes movedown {
+    from {
+        top: 30px;
+    }
+
+    to {
+        top: 40px;
+    }
+}
+
+@keyframes movedown {
+    from {
+        top: 30px;
+    }
+
+    to {
+        top: 40px;
+    }
+}
+
+
+.box {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+}
+
+h3.title {
+    letter-spacing: 3px;
+}
+
+.bg-color {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: black;
+    opacity: 0.5;
+    top: 0;
+    display: none;
+}

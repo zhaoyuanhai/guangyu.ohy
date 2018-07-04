@@ -1,0 +1,108 @@
+﻿@model List<PressCenter>
+@{
+    ViewBag.Title = UIHelper.Word("新闻中心");
+}
+
+@section header{
+   
+    <style>
+        .ct {
+        }
+
+            .ct::before {
+                content: "";
+                display: block;
+                height: 40px;
+            }
+
+        ul.list {
+            /*width: 70%;*/
+            margin: auto;
+        }
+
+        .list li {
+            height: 87px;
+            list-style: none;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px 10px 0 10px;
+        }
+
+            .list li:hover {
+                background-color: #e0e0e0;
+                cursor: pointer;
+            }
+
+            .list li  div.title {
+                width: 80px;
+                float: left;
+                display:none;
+            }
+
+            .list li .cns {
+                float: right;
+                width: 670px;
+                word-break: break-word;
+                max-height: 100%;
+                overflow: hidden;
+            }
+
+                .list li .cns > p {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: normal;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 3;
+                    overflow: hidden;
+                }
+
+                .list li .cns > h3.title {
+                    margin-bottom: 5px;
+                    font-size: initial;
+                }
+
+        .pageList a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-bottom: 0;
+        }
+
+        .aaa {
+            /*width: 70%;*/
+            position: absolute;
+            left: -35%;
+            margin-left: 55%;
+        }
+    </style>
+}
+
+<div class="ct">
+    <ul class="list">
+        @foreach (var item in Model)
+        {
+            <li>
+                <section class="aaa">
+                    <div class="title">
+                        <h1>
+                            @item._id.CreationTime.ToString("MM-dd")
+                        </h1>
+                        <span>@item._id.CreationTime.ToString("yyyy")</span>
+                    </div>
+                    <div class="cns">
+                        <h3 class="title">
+                            <a href="@Url.Action("NewsDetail",new { id = item._id.ToString() })" style="color:black">
+                                @item.Title
+                            </a>
+                        </h3>
+                        <p>
+                            @item.Intro
+                        </p>
+                    </div>
+                </section>
+            </li>
+        }
+    </ul>
+</div>
+@Html.Partial("Pageing",Url.Action("NewsCenter"))

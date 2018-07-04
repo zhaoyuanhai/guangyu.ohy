@@ -1,0 +1,56 @@
+﻿@model OHYModel.PressCenter
+@using OHYModel;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>新闻中心</h2>
+<form method="post" enctype="multipart/form-data" action="/PressCenter/Edit">
+    <section>
+        <ul>
+            <li><label>标题:</label><br /><input type="text" name="Title" value="@Model.Title"/></li>
+            <li>
+                <label>语言：</label>
+                <select name="language">
+                    <option @(Model.Language == LanguageEnum.中文 ? "selected" : "") value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                    <option @(Model.Language == LanguageEnum.English ? "selected" : "") value="@LanguageEnum.English">@LanguageEnum.English</option>
+                </select>
+            </li>
+            <li>
+                <label>简介:</label><br />
+               
+                <textarea name="Intro" style="height:50px;">@Model.Intro</textarea>
+            </li>
+            <li>
+                <label>内容：</label>
+                @Html.Partial("_ueditor")
+                <div style="clear:left;"></div>
+            </li>
+            <li><input type="submit" name="save" value="保存" class="but80" />
+            <input type="button" value="返回" name="back" class="but80" />
+                <input type="button" value="删除" name="delete" class="but80" /></li>
+        </ul>
+    </section>
+    @Html.HiddenFor(m=>Model._id)
+    <script>
+        $("input[name='back']").click(function () {
+            window.location = "/PressCenter/index";
+        });
+        $("input[name='delete']").click(function () {
+            if (confirm("确认删除？")) {
+                $.ajax({
+                    type: "GET",
+                    url: "/PressCenter/Delete",
+                    data: { "id": "@Model._id" },
+                    success: function (data) {
+                        window.location = "/PressCenter/index";
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("删除失败！");
+                    }
+                });
+            }
+            
+        });
+    </script>
+</form>

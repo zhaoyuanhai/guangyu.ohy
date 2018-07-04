@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "解决方案";
+}
+@using OHYModel;
+@model Solution
+<h2>解决方案</h2>
+<form action="/SolutionUpdate/index" method="post" enctype="multipart/form-data">
+    <section>
+        <ul>
+            <li>
+                <label>语言：</label>
+                <select name="language">
+                    <option @(Model.Language==LanguageEnum.中文 ? "selected" : "") value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                    <option @(Model.Language==LanguageEnum.English? "selected" : "")  value="@LanguageEnum.English">@LanguageEnum.English</option>
+                </select>
+            </li>
+            <li><img src="@Model.ImgPath" style="width:20%;height:20%"/></li>
+            <li>
+                <label>封面：</label> <input type="file" name="file" />
+            </li>
+            <li>
+                图片名字：<input type="text" name="imgnames" />
+            </li>
+            <li>
+                <label>pdf：</label> <input type="file" name="pdffile" />
+            </li>
+            
+            <li>
+                <input type="button" value="保存" onclick="Save()" class="but80"/>
+                <input type="button" value="返回" name="back" class="but80"/>
+                <input type="button" value="删除" name="delete" class="but80"/>
+            </li>
+        </ul>        
+        @Html.HiddenFor(model=>model._id)
+    </section>
+    <script>
+        $("input[name='back']").click(function () {
+            window.location = "/SolutionList/index";
+        });
+        $("input[name='delete']").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/SolutionUpdate/Delete",
+                data: { "id": "@Model._id" },
+                success: function (data) {
+                    window.location = "/SolutionList/index";
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("删除失败！");
+                }
+            });
+        });
+        function Save() {
+            if ($("input[name='file']").val() == "") {
+                alert("请选择文件");
+                return false;
+            }
+            $("form").submit();
+        }
+    </script>
+</form>

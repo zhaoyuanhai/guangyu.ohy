@@ -1,0 +1,40 @@
+﻿@{
+    string action = Request.RawUrl.Split(new string[] { "/", "?" }, StringSplitOptions.RemoveEmptyEntries)[1];
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/layout.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Scripts/initHeight.js"></script>
+    @RenderSection("header", false)
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span></span>
+            <a href="@Url.Action("Index","Home")">
+                <img class="logo" src="~/images/LOGO-kh.png" alt="logo">
+            </a>
+            <nav class="nav">
+                <ul>
+                    @foreach (var item in Navs)
+                    {
+                        <li class="@(item.Url.Contains(action) ?"active":null)"><a href="@item.Url">@MvcHtmlString.Create(item.Title)</a></li>
+                    }
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="wraper">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

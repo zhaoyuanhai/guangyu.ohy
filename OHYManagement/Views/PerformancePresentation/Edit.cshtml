@@ -1,0 +1,48 @@
+﻿@model OHYModel.PerformancePresentation
+<h2>业绩展示</h2>
+<form method="post" enctype="multipart/form-data" action="/PerformancePresentation/Edit">
+    <section>
+        <ul>
+            <li>
+                <label>语言：</label>
+                <select id="Language" name="Language">
+                    <option value="@OHYModel.LanguageEnum.中文">@OHYModel.LanguageEnum.中文</option>
+
+                    <option value="@OHYModel.LanguageEnum.English">@OHYModel.LanguageEnum.English</option>
+                </select>
+            </li>
+            <li><label>项目时间：</label><br />@Html.TextBoxFor(m => m.EntryTime)</li>
+            <li><label>项目名称：</label><br />@Html.TextBoxFor(m => m.EntryName)</li>
+            <li><label>项目业主/总包方：</label><br /> @Html.TextBoxFor(m => m.CompanyName)</li>
+            
+
+            <li>
+                <input type="submit" name="save" value="保存" class="but80" />
+                <input type="button" value="返回" name="back" class="but80" />
+                <input type="button" value="删除" name="delete" class="but80" />
+            </li>
+        </ul>
+    </section>
+    @Html.HiddenFor(m => m._id)
+    <script>
+        $("input[name='back']").click(function () {
+            window.location = "/PerformancePresentation/index";
+        });
+        $("input[name='delete']").click(function () {
+            if (confirm("确认删除？")) {
+                $.ajax({
+                    type: "GET",
+                    url: "/PerformancePresentation/Delete",
+                    data: { "id": "@Model._id" },
+                    success: function (data) {
+                        window.location = "/PerformancePresentation/index";
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("删除失败！");
+                    }
+                });
+            }
+
+        });
+    </script>
+</form>

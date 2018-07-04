@@ -1,0 +1,34 @@
+﻿@model List<Solution>
+
+@{
+    ViewBag.Title = UIHelper.Word("解决方案");
+}
+
+@section header{
+    <link rel="stylesheet" href="/Content/slider.css" type="text/css" media="screen" charset="utf-8">
+    <script src="~/Scripts/slider.js" type="text/javascript" charset="utf-8"></script>
+}
+
+<div class="cc">
+    <div id="slider">
+        <img class="scrollButtons left" src="/slider/leftarrow.png">
+        <div class="scroll">
+            <div class="scrollContainer">
+                @for(int i=0;i<Model.Count;i++)
+                {
+                    <div class="panel" id="panel_@(i+1)">
+                        <div class="inside">
+                            <a href="@Model[i].pdfPath" target="_blank">
+                                <img src="@Model[i].ImgPath" alt="picture" />
+                            </a>
+                            <h2>@Model[i].Name</h2>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div id="left-shadow"></div>
+            <div id="right-shadow"></div>
+        </div>
+        <img class="scrollButtons right" src="/slider/rightarrow.png">
+    </div>
+</div>

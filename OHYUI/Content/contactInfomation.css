@@ -1,0 +1,39 @@
+﻿.list {
+    border: 0 !important;
+    text-align: left;
+}
+
+    .list > h1 {
+        margin: 10px auto 30px;
+    }
+
+address {
+    font-style: inherit;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+    address > p {
+        margin-bottom: 10px;
+    }
+
+.fdslik {
+    color: #2a8ab4
+;
+}
+
+.imglist{
+    margin-top:10px;
+}
+
+.imglist a{
+    border:0;
+}
+
+.imglist img {
+    margin-right:5px;
+    margin-bottom: 10px;
+    border:0;
+    max-width: 100px;
+    max-height: 50px;
+}

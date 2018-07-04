@@ -1,0 +1,58 @@
+﻿#book .img-conver {
+    width: 120px;
+    height: 150px;
+    position: relative;
+}
+
+    #book .img-conver > img {
+        width: 120px;
+        height: 150px;
+    }
+
+    #book .img-conver > .title {
+        top: 50px;
+        position: absolute;
+        background-color: rgba(128, 128, 128, 0.77);
+        width: 100%;
+        height: 50px;
+        display: none;
+        text-align: center;
+    }
+
+        #book .img-conver > .title > span {
+            margin-top: 18px;
+            display: block;
+            font-size: 13px;
+        }
+
+    #book .img-conver:hover > .title {
+        display: block;
+    }
+
+#shadow {
+    width: 80%;
+    height: 10px;
+    margin: 0 auto 50px;
+    position: relative;
+    top: -3px;
+    background: #fff;
+    box-shadow: 0 10px 35px #888888;
+}
+
+#book {
+    margin-top: 20px
+}
+
+    #book .i0, #book .i5 {
+        margin-left: 145px;
+    }
+
+    #book a {
+        display: inline-block;
+        margin: 0 0 5px 52px;
+    }
+
+/*#book img:hover {
+                border: 2px solid gray;
+                box-sizing: border-box;
+            }*/

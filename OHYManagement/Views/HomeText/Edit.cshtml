@@ -1,0 +1,88 @@
+﻿@using OHYModel
+@model OHYModel.HomeText
+@{
+    ViewBag.Title = "Index";
+    string[] languages = Enum.GetNames(typeof(LanguageEnum));
+}
+
+<h2>Edit</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" action="/HomeText/Edit">
+        <section>
+            <ul>
+                <li>
+                    语言：
+                    <select id="language" name="language">
+                        @foreach (string language in languages)
+                        {
+                            <option @(Model.Language.ToString() == language ? "selected" : "") value="@((int)Enum.Parse(typeof(LanguageEnum),language))">@language</option>
+                        }
+                    </select>
+                </li>
+                <li>
+                    <label>标题:</label><br />
+
+                    <input type="text" name="title" value="@Model.Title">
+
+                </li>
+                <li>
+                    <label>内容:</label><br />
+                    <textarea name="content">@Model.Content</textarea>
+
+                </li>
+                <li>
+                    <input type="submit" name="save" value="保存" onclick="Save()" class="but80" />
+                    <input type="button" value="返回" name="back" class="but80" />
+                    <input type="button" value="删除" name="delete" class="but80" />
+                </li>
+            </ul>
+            @Html.HiddenFor(model => model._id)
+            @Html.ActionLink("Go Back List", "Index");
+        </section>
+        <script type="text/javascript">
+            function Save() {
+                var title = $("input[name='title']").val();
+                var content = $("input[name='content']").val();
+                var address = $("input[name='address']").val();
+                if (title == "") {
+                    alert("输入标题为空，或都是空格");
+                    return false;
+                }
+                if (content == "") {
+                    alert("输入内容为空，或都是空格");
+                    return false;
+                }
+                if (address == "") {
+                    alert("输入地址为空，或都是空格");
+                    return false;
+                }
+                $("form").submit();
+            }
+
+            $("input[name='delete']").click(function () {
+                if (confirm("确认删除？")) {
+                    $.ajax({
+                        type: "GET",
+                        url: "/HomeText/Delete",
+                        data: { "id": "@Model._id" },
+                        success: function (data) {
+                            window.location = "/HomeText/index";
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert("删除失败！");
+                        }
+                    });
+                }
+            });
+            $("input[name='back']").click(function () {
+                window.location = "/HomeText/Index";
+            });
+        </script>
+    </form>
+</body>
+</html>

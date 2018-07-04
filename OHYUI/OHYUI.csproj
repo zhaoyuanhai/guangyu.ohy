@@ -1,0 +1,956 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5760A1D-61CB-4D14-848C-05E86E754872}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OHYUI</RootNamespace>
+    <AssemblyName>OHYUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.4.2.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.2\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.2.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.2\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.2.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.2\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DetailController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\FileImageModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PageingModel.cs" />
+    <Compile Include="PageFactory\MyWebViewPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\productcenter.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cooperativepartner.css" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\demo.css" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\demo_fontclass.html" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\demo_symbol.html" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\demo_unicode.html" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\iconfont.css" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\iconfont.js" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\iconfont.svg" />
+    <Content Include="Content\ie\images\code.png" />
+    <Content Include="Content\ie\images\contact.png" />
+    <Content Include="Content\ie\images\qq.png" />
+    <Content Include="Content\ie\css\style.css" />
+    <Content Include="Content\ie\images\us.png" />
+    <Content Include="Content\pageGroup.css" />
+    <Content Include="images\friendlink\conseptec.png" />
+    <Content Include="images\friendlink\ffc-uk.png" />
+    <Content Include="images\friendlink\idom.png" />
+    <Content Include="images\friendlink\logo-1.png" />
+    <Content Include="images\friendlink\logo-2.png" />
+    <Content Include="images\friendlink\logo-3.png" />
+    <Content Include="images\friendlink\logo-4.png" />
+    <Content Include="images\friendlink\logo-5.png" />
+    <Content Include="images\friendlink\logo-6.png" />
+    <Content Include="images\friendlink\logo-7.png" />
+    <Content Include="images\friendlink\logo-8.png" />
+    <Content Include="images\friendlink\logo-9.png" />
+    <Content Include="images\logo-1.png" />
+    <Content Include="images\logo-2.png" />
+    <Content Include="images\logo-3.png" />
+    <Content Include="images\logo-4.png" />
+    <Content Include="images\rqcode.jpg" />
+    <Content Include="images\weichart.png" />
+    <Content Include="index.html" />
+    <Content Include="pageScripts\contact.js" />
+    <Content Include="Content\contactInfomation.css" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\layout.css" />
+    <Content Include="Content\preshow.css" />
+    <Content Include="Content\slider.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\webkit\css\style.css" />
+    <Content Include="Content\webkit\images\code.png" />
+    <Content Include="Content\webkit\images\contact.png" />
+    <Content Include="Content\webkit\images\qq.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\10.jpg" />
+    <Content Include="images\11.jpg" />
+    <Content Include="images\12.jpg" />
+    <Content Include="images\13.jpg" />
+    <Content Include="images\14.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\6.jpg" />
+    <Content Include="images\7.jpg" />
+    <Content Include="images\8.jpg" />
+    <Content Include="images\9.jpg" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\arrow-left.png" />
+    <Content Include="images\arrow-right.png" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\bg.png" />
+    <Content Include="images\btn.png" />
+    <Content Include="images\buttons.png" />
+    <Content Include="images\circle.png" />
+    <Content Include="images\classification\1.1.png" />
+    <Content Include="images\classification\1.png" />
+    <Content Include="images\classification\2.2.png" />
+    <Content Include="images\classification\2.png" />
+    <Content Include="images\classification\22右下banner.jpg" />
+    <Content Include="images\classification\3.3.png" />
+    <Content Include="images\classification\3.png" />
+    <Content Include="images\classification\4.4.png" />
+    <Content Include="images\classification\4.png" />
+    <Content Include="images\classification\5.5.png" />
+    <Content Include="images\classification\5.png" />
+    <Content Include="images\classification\6.6.png" />
+    <Content Include="images\classification\6.png" />
+    <Content Include="images\classification\7.7.png" />
+    <Content Include="images\classification\7.png" />
+    <Content Include="images\classification\banner.jpg" />
+    <Content Include="images\classification\LOGO.png" />
+    <Content Include="images\Company_Profile.jpg" />
+    <Content Include="images\coobg.jpg" />
+    <Content Include="images\cube.png" />
+    <Content Include="images\h1.png" />
+    <Content Include="images\leftshadow.png" />
+    <Content Include="images\left_bg.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\LOGO-kh.png" />
+    <Content Include="images\LOGO.png" />
+    <Content Include="images\NumBtn.png" />
+    <Content Include="images\Performance.jpg" />
+    <Content Include="images\rightshadow.png" />
+    <Content Include="images\right_bg.jpg" />
+    <Content Include="images\sea.jpg" />
+    <Content Include="images\业绩展示banner.jpg" />
+    <Content Include="images\产品中心图书.png" />
+    <Content Include="images\公司简介banner.jpg" />
+    <Content Include="images\公司简介底纹.jpg" />
+    <Content Include="images\coologo.png" />
+    <Content Include="images\联系我们banner.jpg" />
+    <Content Include="images－no\1.jpg" />
+    <Content Include="images－no\10.jpg" />
+    <Content Include="images－no\11.jpg" />
+    <Content Include="images－no\12.jpg" />
+    <Content Include="images－no\13.jpg" />
+    <Content Include="images－no\14.jpg" />
+    <Content Include="images－no\2.jpg" />
+    <Content Include="images－no\3.jpg" />
+    <Content Include="images－no\4.jpg" />
+    <Content Include="images－no\5.jpg" />
+    <Content Include="images－no\6.jpg" />
+    <Content Include="images－no\7.jpg" />
+    <Content Include="images－no\8.jpg" />
+    <Content Include="images－no\9.jpg" />
+    <Content Include="images－no\btn.png" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.jpg" />
+    <Content Include="pageScripts\contactie.js" />
+    <Content Include="pageScripts\index.js" />
+    <Content Include="pageScripts\magazine.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="App_Code\UIHelper.cshtml" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\iconfont.eot" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\iconfont.ttf" />
+    <Content Include="Content\font_nt5ogl4mn16k1emi\iconfont.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Scripts\FlipBook\images\Thumbs.db" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\cookie.js" />
+    <Content Include="Scripts\FlipBook\css\elements.css" />
+    <Content Include="Scripts\FlipBook\css\preloader.css" />
+    <Content Include="Scripts\FlipBook\css\reset.css" />
+    <Content Include="Scripts\FlipBook\css\static.css" />
+    <Content Include="Scripts\FlipBook\css\style.css" />
+    <Content Include="Scripts\FlipBook\images\1.jpg" />
+    <Content Include="Scripts\FlipBook\images\1_.jpg" />
+    <Content Include="Scripts\FlipBook\images\2_.jpg" />
+    <Content Include="Scripts\FlipBook\images\3.jpg" />
+    <Content Include="Scripts\FlipBook\images\3_.jpg" />
+    <Content Include="Scripts\FlipBook\images\4_5.jpg" />
+    <Content Include="Scripts\FlipBook\images\4_5_.jpg" />
+    <Content Include="Scripts\FlipBook\images\6.jpg" />
+    <Content Include="Scripts\FlipBook\images\6_.jpg" />
+    <Content Include="Scripts\FlipBook\images\7_.jpg" />
+    <Content Include="Scripts\FlipBook\images\8_.jpg" />
+    <Content Include="Scripts\FlipBook\images\9.jpg" />
+    <Content Include="Scripts\FlipBook\images\9_.jpg" />
+    <Content Include="Scripts\FlipBook\images\bcg.jpg" />
+    <Content Include="Scripts\FlipBook\images\end_.jpg" />
+    <Content Include="Scripts\FlipBook\images\icons.png" />
+    <Content Include="Scripts\FlipBook\images\logo.png" />
+    <Content Include="Scripts\FlipBook\index.html" />
+    <Content Include="Scripts\FlipBook\js\jquery.address-1.6.min.js" />
+    <Content Include="Scripts\FlipBook\js\jquery.fullscreen.js" />
+    <Content Include="Scripts\FlipBook\js\jquery.js" />
+    <Content Include="Scripts\FlipBook\js\onload.js" />
+    <Content Include="Scripts\FlipBook\js\turn.js" />
+    <Content Include="Scripts\initHeight.js" />
+    <Content Include="Scripts\jplaceholder.js" />
+    <Content Include="Scripts\jqimgScroll\jquery-1.11.0.min.js" />
+    <Content Include="Scripts\jqimgScroll\jQuery-easing.js" />
+    <Content Include="Scripts\jqimgScroll\jQuery-jcImgScroll.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-lbt\images\Thumbs.db" />
+    <Content Include="Scripts\jquery-lbt\jquery插件库.url" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.1.min.js" />
+    <Content Include="Scripts\jquery-lbt\css\css.css" />
+    <Content Include="Scripts\jquery-lbt\images\1.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\10.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\11.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\12.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\13.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\14.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\2.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\3.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\4.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\5.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\6.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\7.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\8.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\9.jpg" />
+    <Content Include="Scripts\jquery-lbt\images\btn.png" />
+    <Content Include="Scripts\jquery-lbt\images\home_bg.jpg" />
+    <Content Include="Scripts\jquery-lbt\index.html" />
+    <Content Include="Scripts\jquery-lbt\js\script.js" />
+    <Content Include="Scripts\jquery-lbt\www.jq22.com.txt" />
+    <Content Include="Scripts\jquery.metadata.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.vticker-min.js" />
+    <Content Include="Scripts\layer-v2.0\demo.html" />
+    <Content Include="Scripts\layer-v2.0\layer\extend\layer.ext.js" />
+    <Content Include="Scripts\layer-v2.0\layer\layer.js" />
+    <Content Include="Scripts\layer-v2.0\layer\skin\default\icon-ext.png" />
+    <Content Include="Scripts\layer-v2.0\layer\skin\default\icon.png" />
+    <Content Include="Scripts\layer-v2.0\layer\skin\default\loading-0.gif" />
+    <Content Include="Scripts\layer-v2.0\layer\skin\default\loading-1.gif" />
+    <Content Include="Scripts\layer-v2.0\layer\skin\default\loading-2.gif" />
+    <Content Include="Scripts\layer-v2.0\layer\skin\layer.css" />
+    <Content Include="Scripts\layer-v2.0\layer\skin\layer.ext.css" />
+    <Content Include="Scripts\layer-v2.0\更新日志.txt" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\slider.js" />
+    <Content Include="Scripts\sliderbox\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\sliderbox\jquery.slideBox.css" />
+    <Content Include="Scripts\sliderbox\jquery.slideBox.js" />
+    <Content Include="Scripts\sliderbox\jquery.slideBox.min.js" />
+    <Content Include="Scripts\src\jquery-1.11.2.js" />
+    <Content Include="Scripts\src\paging.css" />
+    <Content Include="Scripts\src\paging.js" />
+    <Content Include="Scripts\src\query.js" />
+    <Content Include="Scripts\src\require.js" />
+    <Content Include="Scripts\turnjs4\changelog.txt" />
+    <Content Include="Scripts\turnjs4\extras\jGestures-license.txt" />
+    <Content Include="Scripts\turnjs4\extras\jgestures.min.js" />
+    <Content Include="Scripts\turnjs4\extras\jquery-ui-1.8.20.custom.min.js" />
+    <Content Include="Scripts\turnjs4\extras\jquery.min.1.7.js" />
+    <Content Include="Scripts\turnjs4\extras\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\turnjs4\extras\modernizr.2.5.3.min.js" />
+    <Content Include="Scripts\turnjs4\lib\hash.js" />
+    <Content Include="Scripts\turnjs4\lib\scissor.js" />
+    <Content Include="Scripts\turnjs4\lib\scissor.min.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.html4.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.html4.min.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.min.js" />
+    <Content Include="Scripts\turnjs4\lib\zoom.js" />
+    <Content Include="Scripts\turnjs4\lib\zoom.min.js" />
+    <Content Include="Scripts\turnjs4\samples\basic\css\basic.css" />
+    <Content Include="Scripts\turnjs4\samples\basic\index.html" />
+    <Content Include="Scripts\turnjs4\samples\basic\js\basic.js" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\1.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\10.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\11.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\12.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\2.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\3.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\4.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\5.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\6.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\7.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\8.jpg" />
+    <Content Include="Scripts\turnjs4\samples\basic\pages\9.jpg" />
+    <Content Include="Scripts\turnjs4\samples\docs\css\docs.css" />
+    <Content Include="Scripts\turnjs4\samples\docs\css\jquery.ui.css" />
+    <Content Include="Scripts\turnjs4\samples\docs\css\jquery.ui.html4.css" />
+    <Content Include="Scripts\turnjs4\samples\docs\index.html" />
+    <Content Include="Scripts\turnjs4\samples\docs\js\docs.js" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\1.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\10.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\11.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\12.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\13.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\14.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\15.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\16.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\17.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\18.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\19.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\2.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\20.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\21.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\22.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\23.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\24.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\25.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\3.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\4.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\5.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\6.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\7.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\8.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pages\9.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\covers.jpg" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\covers.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\left-border.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\loader.gif" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\preview.jpg" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\right-border.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\tab-hover.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\tab-off.png" />
+    <Content Include="Scripts\turnjs4\samples\docs\pics\tab-on.png" />
+    <Content Include="Scripts\turnjs4\samples\double-page\css\double-page.css" />
+    <Content Include="Scripts\turnjs4\samples\double-page\index.html" />
+    <Content Include="Scripts\turnjs4\samples\double-page\pages\1.jpg" />
+    <Content Include="Scripts\turnjs4\samples\double-page\pages\2.jpg" />
+    <Content Include="Scripts\turnjs4\samples\double-page\pages\3.jpg" />
+    <Content Include="Scripts\turnjs4\samples\double-page\pages\4.jpg" />
+    <Content Include="Scripts\turnjs4\samples\double-page\pages\5.jpg" />
+    <Content Include="Scripts\turnjs4\samples\double-page\pages\6.jpg" />
+    <Content Include="Scripts\turnjs4\samples\double-page\pages\7.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\css\jquery.ui.css" />
+    <Content Include="Scripts\turnjs4\samples\magazine\css\jquery.ui.html4.css" />
+    <Content Include="Scripts\turnjs4\samples\magazine\css\magazine.css" />
+    <Content Include="Scripts\turnjs4\samples\magazine\index - 复制.html" />
+    <Content Include="Scripts\turnjs4\samples\magazine\index.html" />
+    <Content Include="Scripts\turnjs4\samples\magazine\js\magazine.js" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\1-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\1-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\1.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\10-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\10-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\10.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\11-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\11-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\11.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\12-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\12-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\12.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\2-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\2-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\2.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\3-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\3-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\3.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\4-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\4-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\4.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\5-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\5-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\5.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\6-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\6-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\6.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\7-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\7-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\7.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\8-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\8-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\8.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\9-large.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\9-thumb.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\9.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\preview.jpg" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pics\arrows.png" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pics\loader.gif" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pics\zoom-icons-editable.png" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pics\zoom-icons.png" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pics\zoom.png" />
+    <Content Include="Scripts\turnjs4\samples\magazine\slider.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\css\jquery.ui.css" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\css\jquery.ui.html4.css" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\css\steve-jobs-html4.css" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\css\steve-jobs.css" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\index.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\js\steve-jobs.js" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page10.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page100.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page101.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page102.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page103.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page104.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page105.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page106.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page107.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page108.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page109.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page11.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page110.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page12.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page13.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page14.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page15.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page16.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page17.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page18.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page19.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page20.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page21.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page22.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page23.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page24.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page25.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page26.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page27.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page28.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page29.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page30.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page31.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page32.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page33.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page34.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page35.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page36.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page37.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page38.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page39.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page40.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page41.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page42.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page43.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page44.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page45.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page46.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page47.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page48.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page49.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page5.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page50.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page51.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page52.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page53.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page54.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page55.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page56.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page57.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page58.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page59.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page6.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page60.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page61.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page62.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page63.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page64.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page65.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page66.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page67.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page68.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page69.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page7.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page70.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page71.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page72.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page73.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page74.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page75.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page76.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page77.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page78.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page79.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page8.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page80.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page81.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page82.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page83.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page84.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page85.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page86.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page87.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page88.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page89.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page9.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page90.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page91.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page92.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page93.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page94.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page95.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page96.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page97.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page98.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\page99.html" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pages\preview.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\05.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\06.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\07.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\08.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\09.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\10.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\11.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\12.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\13.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\14.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\15.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\16.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\17.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\18.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\19.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\20.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\21.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\22.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\23.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\24.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\24.png" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\25.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\26.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\27.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\29.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\30.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\31.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\32.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\33.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\34.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\35.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\36.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\37.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\38.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\39.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\40.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\41.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\42.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\43.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\44.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\45.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\46.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\47.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\48.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\book-covers.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\book-covers.png" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\books.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\collegue.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\gradient-page-left.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\gradient-page-right.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\highschool.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\highschool2.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\loader.gif" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\pages-depth.png" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\preview.jpg" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\spine.png" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\thumb.png" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\pics\young.jpg" />
+    <Content Include="Scripts\zoom-master\daisy.jpg" />
+    <Content Include="Scripts\zoom-master\demo.html" />
+    <Content Include="Scripts\zoom-master\grab.cur" />
+    <Content Include="Scripts\zoom-master\grabbed.cur" />
+    <Content Include="Scripts\zoom-master\icon.png" />
+    <Content Include="Scripts\zoom-master\jquery.zoom.js" />
+    <Content Include="Scripts\zoom-master\jquery.zoom.min.js" />
+    <Content Include="Scripts\zoom-master\roxy.jpg" />
+    <Content Include="Scripts\zoopic.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="slider\1.jpg" />
+    <Content Include="slider\2.jpg" />
+    <Content Include="slider\3.jpg" />
+    <Content Include="slider\4.jpg" />
+    <Content Include="slider\5.jpg" />
+    <Content Include="slider\leftarrow.png" />
+    <Content Include="slider\leftshadow.png" />
+    <Content Include="slider\movingboxes.png" />
+    <Content Include="slider\rightarrow.png" />
+    <Content Include="slider\rightshadow.png" />
+    <Content Include="Detail\ProductDetail\pages\1-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\1-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\1.jpg" />
+    <Content Include="Detail\ProductDetail\pages\10-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\10-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\10.jpg" />
+    <Content Include="Detail\ProductDetail\pages\11-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\11-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\11.jpg" />
+    <Content Include="Detail\ProductDetail\pages\12-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\12-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\12.jpg" />
+    <Content Include="Detail\ProductDetail\pages\2-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\2-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\2.jpg" />
+    <Content Include="Detail\ProductDetail\pages\3-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\3-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\3.jpg" />
+    <Content Include="Detail\ProductDetail\pages\4-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\4-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\4.jpg" />
+    <Content Include="Detail\ProductDetail\pages\5-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\5-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\5.jpg" />
+    <Content Include="Detail\ProductDetail\pages\6-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\6-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\6.jpg" />
+    <Content Include="Detail\ProductDetail\pages\7-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\7-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\7.jpg" />
+    <Content Include="Detail\ProductDetail\pages\8-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\8-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\8.jpg" />
+    <Content Include="Detail\ProductDetail\pages\9-large.jpg" />
+    <Content Include="Detail\ProductDetail\pages\9-thumb.jpg" />
+    <Content Include="Detail\ProductDetail\pages\9.jpg" />
+    <Content Include="Detail\ProductDetail\pages\preview.jpg" />
+    <Content Include="Detail\ProductDetail\css\elements.css" />
+    <Content Include="Detail\ProductDetail\css\preloader.css" />
+    <Content Include="Detail\ProductDetail\css\reset.css" />
+    <Content Include="Detail\ProductDetail\css\static.css" />
+    <Content Include="Detail\ProductDetail\css\style.css" />
+    <Content Include="Detail\ProductDetail\images\1.jpg" />
+    <Content Include="Detail\ProductDetail\images\1_.jpg" />
+    <Content Include="Detail\ProductDetail\images\2_.jpg" />
+    <Content Include="Detail\ProductDetail\images\3.jpg" />
+    <Content Include="Detail\ProductDetail\images\3_.jpg" />
+    <Content Include="Detail\ProductDetail\images\4_5.jpg" />
+    <Content Include="Detail\ProductDetail\images\4_5_.jpg" />
+    <Content Include="Detail\ProductDetail\images\6.jpg" />
+    <Content Include="Detail\ProductDetail\images\6_.jpg" />
+    <Content Include="Detail\ProductDetail\images\7_.jpg" />
+    <Content Include="Detail\ProductDetail\images\8_.jpg" />
+    <Content Include="Detail\ProductDetail\images\9.jpg" />
+    <Content Include="Detail\ProductDetail\images\9_.jpg" />
+    <Content Include="Detail\ProductDetail\images\bcg.jpg" />
+    <Content Include="Detail\ProductDetail\images\end_.jpg" />
+    <Content Include="Detail\ProductDetail\images\icons.png" />
+    <Content Include="Detail\ProductDetail\images\logo.png" />
+    <Content Include="Detail\ProductDetail\js\jquery.address-1.6.min.js" />
+    <Content Include="Detail\ProductDetail\js\jquery.fullscreen.js" />
+    <Content Include="Detail\ProductDetail\js\jquery.js" />
+    <Content Include="Detail\ProductDetail\js\onload.js" />
+    <Content Include="Detail\ProductDetail\js\turn.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Detail\ProductDetail.cshtml" />
+    <Content Include="Views\Detail\CompanyProfile.cshtml" />
+    <Content Include="Views\Detail\Cooperativepartner.cshtml" />
+    <Content Include="Views\Detail\ProductCenter.cshtml" />
+    <Content Include="Views\Detail\Solution.cshtml" />
+    <Content Include="Views\Detail\PreShow.cshtml" />
+    <Content Include="Views\Detail\NewsCenter.cshtml" />
+    <Content Include="Views\Detail\ContactInformation.cshtml" />
+    <Content Include="Scripts\layer-v2.0\doc\jquery下载.url" />
+    <Content Include="Scripts\layer-v2.0\doc\layer交流.url" />
+    <Content Include="Scripts\layer-v2.0\doc\layer官网.url" />
+    <Content Include="Views\Shared\Pageing.cshtml" />
+    <Content Include="Views\Shared\EmailTemplate.cshtml" />
+    <Content Include="Views\Detail\NewsDetail.cshtml" />
+    <Content Include="Scripts\turnjs4\lib\compress.sh" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\1-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\10-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\11-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\12-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\2-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\3-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\4-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\5-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\6-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\7-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\8-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\magazine\pages\9-regions.json" />
+    <Content Include="Scripts\turnjs4\samples\steve-jobs\fonts\Stempel-Garamond-W01-Roman.woff" />
+    <Content Include="Scripts\turnjs4\turnjs4-api-docs.pdf" />
+    <Content Include="Detail\ProductDetail\pages\1-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\10-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\11-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\12-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\2-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\3-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\4-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\5-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\6-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\7-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\8-regions.json" />
+    <Content Include="Detail\ProductDetail\pages\9-regions.json" />
+    <Content Include="Scripts\zoom-master\bower.json" />
+    <Content Include="Scripts\zoom-master\LICENSE.md" />
+    <Content Include="Scripts\zoom-master\package.json" />
+    <Content Include="Scripts\zoom-master\readme.md" />
+    <Content Include="Views\Detail\ProductDetail_old.cshtml" />
+    <Content Include="Detail\ProductDetail\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="Scripts\turnjs4\samples\basic\pics\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OHYCommon\OHYCommon.csproj">
+      <Project>{53f2db21-4564-4ab5-a6f3-79fcb4bbcda5}</Project>
+      <Name>OHYCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OHYDAL\OHYDAL.csproj">
+      <Project>{64969ea4-7f3f-4fa0-a4b9-e23b86aaba99}</Project>
+      <Name>OHYDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OHYModel\OHYModel.csproj">
+      <Project>{befa604a-f3dc-44aa-a576-9c7ba356b934}</Project>
+      <Name>OHYModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52586</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8093</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

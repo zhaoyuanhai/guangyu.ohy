@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "产品中心";
+}
+@using OHYModel;
+<h2>合作伙伴</h2>
+<form action="/HomeText/Add" method="post" enctype="multipart/form-data">
+    <section>
+        <ul>
+            <li>
+                <label>语言：</label>
+                <select name="language">
+                    <option value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                    <option value="@LanguageEnum.English">@LanguageEnum.English</option>
+                </select>
+            </li>
+            <li>
+                <label>标题：</label><br /> <input style="width:637px" type="text" name="title" />
+            </li>
+            <li>
+                <label>内容：</label><br />
+                <textarea name="content"></textarea>
+            </li>
+            <li>
+                <input type="button" value="保存" onclick="Save()" class="but80" />
+                <input type="button" value="返回" name="back" class="but80" />
+            </li>
+        </ul>
+    </section>
+    <script>
+
+        $("input[name='back']").click(function () {
+            window.location = "/HomeText/index";
+        });
+        function Save() {
+            var title = $("input[name='title']").val();
+            var content = $("input[name='content']").val();
+            //var address = $("input[name='address']").val();
+            if (title=="") {
+                alert("输入标题为空，或都是空格");
+                return false;
+            }
+            if (content == "") {
+                alert("输入内容为空，或都是空格");
+                return false;
+            }
+            //if (address == "") {
+            //    alert("输入地址为空，或都是空格");
+            //    return false;
+            //}
+            $("form").submit();
+        }
+    </script>
+</form>

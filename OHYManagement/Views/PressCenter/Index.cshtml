@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OHYModel.PressCenter>
+@using OHYModel;
+@{
+    ViewBag.Title = "Index";
+    string[] languages = Enum.GetNames(typeof(LanguageEnum));
+}
+<h2>新闻中心</h2>
+<div style="margin-top:30px;">
+    <div>
+        语言：
+        <select id="language" name="Language">
+            @foreach (string language in languages)
+            {
+                <option @(Language.ToString() == language ? "selected" : "") value="@((int)Enum.Parse(typeof(LanguageEnum),language))">@language</option>
+            }
+        </select><a href="/PressCenter/Add">新增</a>
+    </div>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>标题</th>
+                <th style="width:100px;">简介</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p._id.CreationTime.AddHours(8).GetDateTimeFormats('f')[0].ToString()</td>
+                    <td>@p.Title</td>
+                    <td style="width:100px;">@p.Intro</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { PressCenter_id = p._id })
+                       
+                    </td>
+                </tr>
+            }
+          
+        </tbody>
+    </table>
+</div>
+@Html.Partial("PageView");
+<script type="text/javascript">
+    $("#language").change(function () {
+        var lan = $("#language").val();
+        window.location = "/PressCenter/index?language=" + lan;
+    });
+</script>
+

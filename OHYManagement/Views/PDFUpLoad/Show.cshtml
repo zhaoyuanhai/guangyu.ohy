@@ -1,0 +1,16 @@
+﻿@model OHYModel.PDF
+@{
+    ViewBag.Title = "Show";
+}
+<h2>Show</h2>
+@Html.LabelFor(mod => mod.Title)
+<br />
+@Html.EditorFor(mod => mod.Title)
+<br />     <br />
+@Html.LabelFor(mod => mod.Content)
+<br />
+@Html.EditorFor(mod => Model.Content)
+<br />
+图片：
+<img src="@Model.AttachmentPath" alt="img" />
+

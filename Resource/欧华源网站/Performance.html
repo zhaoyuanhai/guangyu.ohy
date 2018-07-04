@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="Performance.css">
+    
+    <script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var theme_list_open = false;
+
+        $(document).ready(function () {
+            function fixHeight() {
+                var headerHeight = $("#switcher").height();
+                $("#iframe").attr("height", $(window).height()-54+ "px");
+            }
+            $(window).resize(function () {
+                fixHeight();
+            }).resize();
+
+            $('.icon-monitor').addClass('active');
+
+            $(".icon-mobile-3").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-3');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-mobile-2").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-mobile-1").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('mobile-width');
+                $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-tablet").click(function () {
+                $("#by").css("overflow-y", "auto");
+                $('#iframe-wrap').removeClass().addClass('tablet-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+
+            $(".icon-monitor").click(function () {
+                $("#by").css("overflow-y", "hidden");
+                $('#iframe-wrap').removeClass().addClass('full-width');
+                $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+                $(this).addClass('active');
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="title_top">
+        <div id="title_header">
+            <img src="image/LOGO-kh.png" alt="">
+            <div id="header">
+                <div id="header_content">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                        <li><a href="#">产品中心</a></li>
+                        <li><a href="#">解决方案</a></li>
+                        <li><a href="#">业绩展示</a></li>
+                        <li><a href="#">新闻中心</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bag">
+        <div id="background_content">
+            <div id="Performance_logo">
+                <img src="image/Performance.jpg" alt="">
+            </div>
+            <div id="information">
+                <table>
+                    <tr>
+                        <th>年份</th>
+                        <th>项目名称</th>
+                        <th>项目名称</th>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                    <tr>
+                        <td>4017年</td>
+                        <td>印尼魏桥铝业海水淡化</td>
+                        <td>山东魏桥集团</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

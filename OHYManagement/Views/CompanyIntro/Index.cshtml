@@ -1,0 +1,47 @@
+﻿@model OHYModel.CompanyProfile
+
+@{
+    ViewBag.Title = "公司简介信息录入";
+}
+<link href="~/Content/css/ohyStyle.css" rel="stylesheet" />
+<h2>公司简介信息录入</h2>
+<form method="post" enctype="multipart/form-data" action="/CompanyIntro/Index">
+    <section>
+        <ul>
+            <li>
+                语言：<select id="language" name="language">
+                    <option @(Model.Language == OHYModel.LanguageEnum.中文 ? "selected" : "") value="@OHYModel.LanguageEnum.中文">@OHYModel.LanguageEnum.中文</option>
+
+                    <option @(Model.Language == OHYModel.LanguageEnum.English ? "selected" : "") value="@OHYModel.LanguageEnum.English">@OHYModel.LanguageEnum.English</option>
+                </select>切换语言分别显示中英文的公司简介
+            </li>
+            <li>
+                <label>简介图：</label><input id="file" type="file" name="file"/>
+            </li>
+            <li>
+                <label>文字说明：</label><br />
+                <textarea id="content" name="content" >@Model.Content
+                </textarea>
+            </li>
+            
+            <li>
+                <input id="save" type="button" value="保存" class="but200" onclick="Save()"/>
+            </li>
+        </ul>
+    </section>
+</form>
+<script>
+    $("#language").change(function () {
+        var lan = $("#language").val();
+        window.location = "/CompanyIntro/index?language=" + lan;
+    });
+    function Save() {
+        if ($("input[name='file']").val() == "") {
+            alert("请选择文件");
+            return false;
+        }
+        $("form").submit();
+    }
+</script>
+
+

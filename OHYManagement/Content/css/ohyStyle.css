@@ -1,0 +1,38 @@
+﻿h2{
+    margin-left:30%;
+}
+section{
+    margin-top:50px;
+    margin-left:30px;
+    border:1px solid #808080;
+    width:80%;
+    
+}
+section ul {
+        margin-top: 20px;
+       
+    }
+section ul li {
+        margin: 20px 0;
+        list-style-type:none;
+        margin-left:50px;
+    }
+ul li a img{
+        width:20%;
+        height:20%;
+        margin-top:10px;
+        margin-left:5px;
+    }
+    .but50 {
+        width: 50px;
+    }
+
+    .but80 {
+        width: 80px;
+    }
+    .but200 {
+        width: 200px;
+    }
+    textarea{
+        width:80%;height:300px;
+    }

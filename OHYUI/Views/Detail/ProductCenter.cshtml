@@ -1,0 +1,42 @@
+﻿@model List<Product>
+@{
+    ViewBag.Title = UIHelper.Word("产品中心");
+    var brows = new string[] { "ie", "internetexplorer" };
+    bool isIE = brows.Any(e => e == Request.Browser.Browser.ToLower());
+}
+
+@section header{
+    <link rel="stylesheet" type="text/css" href="~/Content/productcenter.css" />
+}
+
+<div id="book">
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <a class="@("i"+i)" target="_blank" data-file="@Model[i].PdfPath" href="@Url.Action("ProductDetail",new { id = Model[i]._id.ToString() })">
+            <div class="img-conver">
+                <img src="@Model[i].Cover">
+                <div class="title">
+                    <span>@Model[i].Name</span>
+                </div>
+            </div>
+        </a>
+        if (i==4)
+        {
+            <div id="shadow"></div>
+        }
+    }
+	@if (Model.Count > 5)
+	{
+		<div id="shadow"></div>
+	}
+    @*<div style="height:153px;"></div>
+    <div id="shadow"></div>*@
+</div>
+@if (isIE)
+{
+    <script>
+        $("[data-file]").each(function () {
+            $(this).attr("href", $(this).attr("data-file"));
+        });
+    </script>
+}

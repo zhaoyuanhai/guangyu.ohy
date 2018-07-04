@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+<style>
+    .clearfix:before,
+    .clearfix:after {
+        clear: both;
+        content: "";
+    }
+</style>
+
+<h2>新闻中心</h2>
+<form method="post" enctype="multipart/form-data" action="/PressCenter/Add">
+    <section>
+        <ul>
+            <li><label>标题:</label><br /><input type="text" name="Title" /></li>
+            <li>
+                <label>语言：</label>
+                <select id="Language" name="Language">
+                    <option  value="@OHYModel.LanguageEnum.中文">@OHYModel.LanguageEnum.中文</option>
+
+                    <option  value="@OHYModel.LanguageEnum.English">@OHYModel.LanguageEnum.English</option>
+                </select>
+    </li>
+            <li>
+                <label>简介:</label><br />
+                <textarea name="Intro" style="height:50px;"></textarea>               
+            </li>
+            <li><label>内容：</label>
+                @Html.Partial("_ueditor")
+                <div style="clear:left;"></div>
+            </li>
+    <li><input type="submit" name="save" value="保存" class="but200" /><input type="button" value="返回" name="back" class="but200" /></li>
+</ul>
+</section>
+    <script>
+        $("input[name='back']").click(function () {
+            window.location = "/PressCenter/index";
+        });
+    </script>
+</form>

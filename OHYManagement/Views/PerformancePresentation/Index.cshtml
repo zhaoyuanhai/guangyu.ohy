@@ -1,0 +1,53 @@
+﻿@using OHYModel;
+@model IEnumerable<OHYModel.PerformancePresentation>
+@{
+    ViewBag.Title = "Index";
+    string[] languages = Enum.GetNames(typeof(LanguageEnum));
+}
+<h2>业绩展示</h2>
+<style type="text/css">
+    th {
+       text-align:center
+    }
+</style>
+<div style="margin-top:30px;">
+    语言：
+    <select id="language" name="Language">
+        @foreach (string language in languages)
+            {
+            <option @(Language.ToString() == language ? "selected" : "") value="@((int)Enum.Parse(typeof(LanguageEnum),language))">@language</option>
+        }
+    </select><a href="/PerformancePresentation/Add">新增</a>
+
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>项目时间</th>
+                <th>项目名称</th>
+                <th>项目业主/总包方</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.EntryTime 年</td>
+                    <td>@p.EntryName</td>
+                    <td>@p.CompanyName</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { PerformancePresentation_ht = p._id })
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+</div>
+@Html.Partial("PageView");
+<script type="text/javascript">
+    $("#language").change(function () {
+        var lan = $("#language").val();
+        window.location = "/PerformancePresentation/index?language=" + lan;
+    });
+</script>

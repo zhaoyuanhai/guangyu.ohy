@@ -1,0 +1,79 @@
+﻿@{
+    //var controller = ViewContext.RouteData.Values["controller"];
+    //var action = ViewContext.RouteData.Values["action"];
+    OHYManagement.Models.PageModel pagemodel = ViewBag.model;
+}
+<style>
+    ul{
+        list-style-type:none;
+    }
+</style>
+<ul>
+    <li style="text-align:center">
+        <br />
+        <div>
+
+            @{
+                if (pagemodel.Count > 0)
+                {
+                    if (pagemodel.PageIndex == 1)
+                    {
+                        <a style="float:left;margin-left:10px;">首页</a>
+                    }
+                    else
+                    {
+                        <a href="@pagemodel.Url?pageIndex=1" style="float:left;margin-left:10px;">首页</a>
+                    }
+                    int pageindex = pagemodel.PageIndex;
+                    var startpage = 1;
+                    long maxpage = 1;
+                    var endpage = pagemodel.PageCount;
+                    if (pageindex > 5)
+                    {
+                        startpage = pageindex - 5;
+                        maxpage = pageindex + 5;
+                        if(maxpage> endpage)
+                        {
+                            maxpage = endpage;
+                        }
+                    }
+                    else
+                    {
+                        maxpage = endpage;
+                        if(maxpage>10)
+                        {
+                            maxpage = 10;
+                        }
+                    }
+
+                    for (var i = startpage; i <= maxpage; i++)
+                    {
+                        if (i == pageindex)
+                        {
+                            <a style="float:left;margin-left:10px;color:#ff6a00;">@i</a>
+                        }
+                        else
+                        {
+                            <a href="@pagemodel.Url?pageIndex=@i" style="float:left;margin-left:10px;">@i</a>
+                        }
+
+                    }
+
+                    if (pagemodel.PageIndex == endpage)
+                    {
+                        <a style="float:left;margin-left:10px;">尾页</a>
+                    }
+                    else
+                    {
+                        <a href="@pagemodel.Url?pageIndex=@endpage" style="float:left;margin-left:10px;">尾页</a>
+                    }
+                }
+
+            }
+
+            
+
+        </div>
+    </li>
+</ul>
+

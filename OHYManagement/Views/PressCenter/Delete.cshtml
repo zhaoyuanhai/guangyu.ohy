@@ -1,0 +1,48 @@
+﻿@model OHYModel.PressCenter
+@{
+    Layout = null;
+}
+
+<h2>Delete</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <table style="width:40%;border:1px solid #0094ff;border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="border:1px solid #0094ff;">日期</th>
+                        <th style="border:1px solid #0094ff;">公司</th>
+                        <th style="border:1px solid #0094ff;">项目名称</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border:1px solid #0094ff">
+
+                            @*@Html.TextBoxFor(p => p._id.CreationTime.AddHours(8).GetDateTimeFormats('f')[0].ToString())*@
+                            @Html.TextBoxFor(p => p._id.CreationTime)
+                        </td>
+                        <td style="border:1px solid #0094ff">
+                            @Html.TextBoxFor(p => p.Title)
+                        </td>
+                        <td style="border:1px solid #0094ff">
+                            @Html.TextBoxFor(p => p.Content)
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button type="submit">Delete</button>
+            <input type="hidden" name="Id" value="@Model._id" />
+
+        }
+        @Html.ActionLink("Go Back List", "Index");
+    </div>
+</body>
+</html>

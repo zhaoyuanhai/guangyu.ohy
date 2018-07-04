@@ -1,0 +1,63 @@
+﻿@model OHYModel.UM
+@{
+	ViewBag.Title = "Logon";
+	Layout = null;
+}
+@*<link href="~/Content/css/ohyStyle.css" rel="stylesheet" />*@
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<style>
+	section {
+		margin-top: 15%;
+		text-align:center;
+	}
+		section ul {
+			margin-top: 20px;
+		}
+			section ul li {
+				margin: 20px 0;
+				list-style-type: none;
+				margin-left: 50px;
+			}
+	.but80 {
+		width: 80px;
+	}
+</style>
+
+<section>
+	<h3>账号登录</h3>
+	<ul>
+		<li>
+			<label>账号：</label>
+			<input type="text" name="UserName" />
+		</li>
+		<li>
+			<label>密码：</label>
+			<input type="password" name="PassWord" />
+		</li>
+		<li>
+			<input type="button" value="登录" name="login" class="but80" />
+		</li>
+	</ul>
+	@Html.HiddenFor(model => model._id)
+</section>
+<script>
+	$("input[name='login']").click(function () {
+		$.ajax({
+			type: "GET",
+			url: "/Login/Loginlocal",
+			data: { "UserName": $("input[name='UserName']").val(), "PassWord": $("input[name='PassWord']").val() },
+			success: function (data) {
+				if (data == "1") {
+					window.location = "/index/index";
+				}
+				else {
+					alert("登录失败！");
+				}
+
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert("登录失败！");
+			}
+		});
+	});
+</script>

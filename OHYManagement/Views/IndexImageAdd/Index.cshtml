@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "首页图片";
+}
+@using OHYModel;
+<form action="/IndexImageAdd/Index" method="post" enctype="multipart/form-data">
+    <h2>@ViewBag.Title</h2>
+    <section>
+        <ul>
+            <li>
+                <label>语言：</label>
+                <select name="language">
+                    <option value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                    <option  value="@LanguageEnum.English">@LanguageEnum.English</option>
+                </select>
+            </li>
+            <li>
+                封面：<input type="file" name="file"/>
+            </li>
+            <li>
+                图片名字：<input type="text" name="imgnames" />
+            </li>
+            <li>
+                <input type="button" value="保存" onclick="Save()" class="but80"/>
+                <input type="button" value="返回" name="back" class="but80"/>
+            </li>
+        </ul>
+    </section>
+    <script>
+
+        $("input[name='back']").click(function () {
+            window.location = "/IndexImageList/index";
+        });
+        function Save() {
+            if ($("input[name='file']").val() == "") {
+                alert("请选择文件");
+                return false;
+            }
+            $("form").submit();
+        }
+    </script>
+</form>

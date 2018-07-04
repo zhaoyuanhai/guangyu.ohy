@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using OHYModel;
+@model List<Product>
+<link href="~/Content/css/ohyStyle.css" rel="stylesheet" />
+<h2>产品中心</h2>
+<section>
+    <ul>
+        <li>
+            <label>语言：</label>
+            <select id="language" name="language">
+                <option @(LanguageEnum.中文 == Language ? "selected" : "") value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                <option @(LanguageEnum.English == Language ? "selected" : "") value="@LanguageEnum.English">@LanguageEnum.English</option>
+            </select>
+            <a href="/ProductAdd/index">新增</a>
+        </li>
+      
+    </ul>
+    <ul>
+        <li>
+            @foreach (var pro in Model)
+            {
+
+                <a href="/ProductUpdate/index?id=@pro._id">
+                    <img src="@pro.Cover"  />
+                </a>
+                @*<a href="/ProductUpdate/index?id=@pro._id">修改</a>*@
+            }
+        </li>
+    </ul>
+   
+</section>
+@Html.Partial("PageView");
+<script>
+    $("#language").change(function () {
+        var lan = $("#language").val();
+        window.location = "/ProductList/index?language=" + lan;
+    });
+</script>

@@ -1,0 +1,79 @@
+﻿@model string
+
+<link href="~/Scripts/src/paging.css" rel="stylesheet" />
+<script src="~/Scripts/src/query.js"></script>
+<script src="~/Scripts/src/paging.js"></script>
+
+<div id="pageToolbar"></div>
+<style>
+    #pageToolbar {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+    }
+</style>
+<script>
+
+    var psize = parseInt("@ViewBag.Pageing.PageSize");
+    var total = parseInt("@ViewBag.Pageing.Total");
+    var pageindex = parseInt("@ViewBag.Pageing.PageIndex");
+    var url = "@Model";
+    $('#pageToolbar').Paging({
+		pagesize: psize,
+		count: total,
+		current: pageindex,
+		callback: function (page, size, count) {
+            location.href = url + "?PageIndex=" + page;
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<style>
+        #pageGro a {
+            color: #999 !important;
+        }
+    </style>
+    <div style="position:absolute;width:100%;bottom:10px;">
+        <div id="pageGro" class="cb">
+            <div class="pagestart">
+                <a href="@Url.Action(Model,new { PageIndex = ViewBag.Next })">首页</a>
+            </div>
+            <div class="pageUp">
+                <a href="@Url.Action(Model,new { PageIndex = ViewBag.Pre })">上一页</a>
+            </div>
+            <div class="pageList">
+                <ul>
+                    @for (int i = 0; i < ViewBag.Pageing.PageCount; i++)
+                    {
+                        <li>
+                            <a href="@Url.Action(Model,new { PageIndex = i + 1 })">@(i + 1)</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="pageDown">
+                <a href="@Url.Action(Model,new { PageIndex = ViewBag.Pageing.Next })">下一页</a>
+            </div>
+            <div class="pageend">
+                <a href="@Url.Action(Model,new { PageIndex = ViewBag.Pageing.PageCount - 1 })">尾页</a>
+            </div>
+        </div>
+    </div>*@
+

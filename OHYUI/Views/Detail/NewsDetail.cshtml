@@ -1,0 +1,22 @@
+﻿@model PressCenter
+@{
+    ViewBag.Title = "NewsDetail";
+}
+
+@section header{
+    <style>
+        .cct {
+            width: 100%;
+            height: 130%;
+            overflow: auto;
+            border: 20px solid transparent;
+            box-sizing: border-box;
+        }
+    </style>
+}
+
+
+<div class="cct">
+    @MvcHtmlString.Create(Model.Content)
+</div>
+

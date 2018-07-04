@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using OHYModel;
+@model List<CooperativePartner>
+<link href="~/Content/css/ohyStyle.css" rel="stylesheet" />
+<h2>合作伙伴</h2>
+<section>
+    <ul>
+        <li>
+            <label>语言：</label>
+            <select id="language" name="language">
+                <option @(LanguageEnum.中文 == Language ? "selected" : "") value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                <option @(LanguageEnum.English == Language ? "selected" : "") value="@LanguageEnum.English">@LanguageEnum.English</option>
+            </select>
+            <a href="/PartnerAdd/index">新增</a>
+        </li>
+      
+    </ul>
+    <ul>
+        <li>
+            @foreach (var par in Model)
+            {
+                @*<li>
+                    <label>轮播图：</label><img src="@par.ImgPath" style="width:40%;height:60px;"/>
+                    <a href="/PartnerUpdate/index?id=@par._id">修改</a>
+                </li>*@
+                <a href="/PartnerUpdate/index?id=@par._id">
+                    <img src="@par.ImgPath" />
+                </a>@*<br/>*@
+                @*<p>图片名字：@(par.Name==null?"暂无名字":par.Name)</p>*@
+
+            }
+        </li>
+    </ul>
+ 
+</section>
+@Html.Partial("PageView");
+<script>
+    $("#language").change(function () {
+        var lan = $("#language").val();
+        window.location = "/PartnerList/index?language=" + lan;
+    });
+</script>

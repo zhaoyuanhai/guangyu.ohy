@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "产品中心";
+}
+@using OHYModel;
+<h2>@ViewBag.Title</h2>
+<form action="/ProductAdd/index" method="post" enctype="multipart/form-data">
+    <section>
+        <ul>
+            <li>
+                <label>语言：</label>
+                <select name="language">
+                    <option  value="@LanguageEnum.中文">@LanguageEnum.中文</option>
+                    <option  value="@LanguageEnum.English">@LanguageEnum.English</option>
+                </select>
+            </li>           
+            <li>
+                <label>封面：</label> <input type="file" name="fileimg" />
+            </li>
+            <li>
+                图片名字：<input type="text" name="imgnames" />
+            </li>
+            <li>
+                <label>pdf：</label> <input type="file" name="filepdf" />
+            </li>
+         
+            <li>
+                <input type="button" value="保存" onclick="Save()" class="but80"/>
+                <input type="button" value="返回" name="back" class="but80"/>
+            </li>
+        </ul>
+    </section>
+    <script>
+
+        $("input[name='back']").click(function () {
+            window.location = "/ProductList/index";
+        });
+        function Save() {
+            if ($("input[name='fileimg']").val() == "") {
+                alert("请选择文件");
+                return false;
+            }
+            if ($("input[name='filepdf']").val() == "") {
+                alert("请选择文件");
+                return false;
+            }
+            $("form").submit();
+        }
+    </script>
+</form>
